@@ -1,0 +1,23 @@
+{
+  "showName": "BẢN TIN 60s",
+  "date": "18/10/2026",
+  "accentColor": "#e11d2e",
+  "tickerLabel": "TIN NHANH",
+  "ticker": [
+    "Tin nhanh thứ nhất",
+    "Tin nhanh thứ hai",
+    "Theo dõi kênh để không bỏ lỡ bản tin tiếp theo"
+  ],
+  "callToAction": "Theo dõi để xem bản tin mỗi ngày",
+  "showSafeZone": false,
+  "stories": [
+    {
+      "category": "Công nghệ",
+      "headline": "Tiêu đề tin ngắn gọn, nổi bật trong 1–2 dòng",
+      "summary": "Tóm tắt 1–2 câu: chuyện gì xảy ra, ai liên quan, vì sao đáng chú ý.",
+      "image": "",
+      "source": "Nguồn tin",
+      "durationInSeconds": 6
+    }
+  ]
+}
