@@ -1,0 +1,90 @@
+{
+  "showName": "BẢN TIN 60s",
+  "date": "18/10/2026",
+  "accentColor": "#e11d2e",
+  "category": "Xe bay",
+  "headline": "Xe bay Alef lướt qua đầu Tesla Roadster",
+  "hookMedia": "media/alef/flyover-front.mp4",
+  "hookCredit": "Video: Alef Aeronautics · Tin: VnExpress",
+  "hookTrimBeforeSeconds": 12,
+  "hookFit": "frame",
+  "shots": [
+    {
+      "media": "media/alef/roadster-flyover.mp4",
+      "text": "Đúng ngày Tesla ra mắt Roadster mới, Alef bay lướt qua Roadster đời cũ",
+      "credit": "Video: Alef Aeronautics",
+      "durationInSeconds": 8,
+      "trimBeforeSeconds": 12,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/flyover-side.mp4",
+      "text": "Cất cánh thẳng đứng, vượt qua Cybertruck và Roadster: chuyến bay thứ 1.000",
+      "credit": "Video: Alef Aeronautics",
+      "durationInSeconds": 8,
+      "trimBeforeSeconds": 13,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/flyover-bottom.mp4",
+      "text": "“Chào mừng Tesla gia nhập cuộc đua xe bay” – CEO Alef Jim Dukhovny",
+      "credit": "Video: Alef Aeronautics",
+      "durationInSeconds": 6,
+      "trimBeforeSeconds": 1.2,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/detroit-front.jpg",
+      "text": "8 động cơ điện, cánh quạt giấu trong thân xe dưới lớp lưới",
+      "credit": "Ảnh: Alef Aeronautics",
+      "durationInSeconds": 5.5,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/flight-test.jpg",
+      "text": "Khi bay, thân xe nghiêng sang một bên, hai hông biến thành cánh",
+      "credit": "Ảnh: Alef Aeronautics",
+      "durationInSeconds": 7.25,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/airport.mp4",
+      "text": "Model A: chạy 354 km trên đường, bay được 177 km",
+      "credit": "Video: Alef Aeronautics",
+      "durationInSeconds": 8,
+      "trimBeforeSeconds": 1,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/standing.mp4",
+      "text": "Hơn 3.600 đơn đặt hàng, trị giá khoảng 1 tỷ USD",
+      "credit": "Video: Alef Aeronautics",
+      "durationInSeconds": 8,
+      "trimBeforeSeconds": 1,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/alef/city.mp4",
+      "text": "Giao xe đầu tiên cuối 2026, tăng sản xuất từ năm 2027",
+      "credit": "Video: Alef Aeronautics",
+      "durationInSeconds": 5.5,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame"
+    }
+  ],
+  "voiceover": "",
+  "music": "",
+  "musicVolume": 0.15,
+  "callToAction": "Theo dõi để xem bản tin mỗi ngày",
+  "showSafeZone": false
+}

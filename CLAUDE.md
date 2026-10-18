@@ -17,7 +17,9 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
 - `src/schema.ts` — schema zod cho props (sửa được trong Studio, hoặc truyền `--props=news.json` khi render).
 - `src/scenes/` — `IntroScene`, `StoryScene`, `OutroScene`. `src/elements/` — `TopBar`, `Ticker`, `Background`, `SafeZoneGuide`.
 - `src/theme.ts` — màu, font, kích thước video, **vùng an toàn `SAFE`**, thời lượng chuyển cảnh.
-- `public/fonts/` — font Be Vietnam Pro đóng gói sẵn (offline). `public/images/` — ảnh cho từng tin.
+- `src/NewsStory60.tsx` — mẫu 1 tin ~60 giây `TinNong60s`: Hook → các cảnh tư liệu (`ShotScene`) → Outro, kèm thanh tiến độ.
+- `episodes/` — kịch bản (props JSON) của từng video đã làm. `scripts/prepare-media.sh` — chuẩn hoá tư liệu.
+- `public/fonts/` — font Be Vietnam Pro đóng gói sẵn (offline). `public/images/`, `public/media/` — ảnh/video tư liệu.
 
 ## Quy tắc bắt buộc
 
@@ -32,7 +34,29 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
 5. Chữ tiếng Việt dùng `fontFamily` từ `src/theme.ts` (Be Vietnam Pro, weight 400/600/800).
 6. Ảnh dùng `<Img>` của `remotion`; video/âm thanh dùng `@remotion/media` (`<Video>`, `<Audio>`) để render mượt, không mất khung.
 
-## Quy trình làm một bản tin
+## Quy trình: người dùng gửi link 1 tin → video 60 giây (`TinNong60s`)
+
+1. **Đọc bài** bằng `curl` (đặt User-Agent trình duyệt) và lấy: tiêu đề, sapo, các đoạn, chú thích ảnh/video, ngày đăng.
+2. **Tìm tư liệu, ưu tiên theo thứ tự:**
+   1. Nguồn gốc của tư liệu: website, press kit, thư mục Google Drive báo chí của công ty/cơ quan trong tin.
+      Thư mục Drive công khai liệt kê được qua `https://drive.google.com/embeddedfolderview?id=<ID>`, tải file qua
+      `https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t`.
+   2. Ảnh/video công khai trên chính bài báo (`og:image`, ảnh trong bài).
+   3. Wikimedia Commons, Pexels, Pixabay cho cảnh minh họa.
+   **Không** giải mã hay vượt qua cơ chế bảo vệ (vd: HLS mã hoá AES, DRM). Gặp thì tìm bản gốc từ nguồn khác.
+3. **Chuẩn bị tư liệu:** tải vào thư mục tạm, chạy `scripts/prepare-media.sh <tạm> public/media/<chủ-đề>`
+   (về 1920px, 30fps). `public/media/` không đưa lên git.
+4. **Xem nội dung** từng video (ghép khung hình bằng ffmpeg) để chọn đoạn có chủ thể rõ: đặt `trimBeforeSeconds`
+   và đảm bảo `trimBeforeSeconds + durationInSeconds` không vượt độ dài clip.
+5. **Viết kịch bản** vào `episodes/<ngày>-<chủ-đề>.json` (schema `story60Schema` trong `src/schema.ts`):
+   hook 3s (tiêu đề ≤ ~45 ký tự) + 6–8 cảnh, mỗi cảnh một ý ≤ ~75 ký tự, chỉ dùng thông tin có trong bài.
+   Muốn đúng 60s: tổng `durationInSeconds` các cảnh ≈ 54 + 0,25 × (số cảnh + 1).
+   Tư liệu ngang dùng `"fit": "frame"`; ảnh/video dọc dùng `"cover"`.
+6. **Ghi nguồn** ở mọi cảnh: `credit` = chủ sở hữu tư liệu ("Video: …", "Ảnh: …"); `hookCredit` thêm báo gốc ("Tin: VnExpress").
+7. **Kiểm tra trước khi render cả video:** `npx remotion render TinNong60s out/check --frames=... --sequence --image-format=jpeg --props=<file>`
+   rồi xem các khung hình. Sau đó: `npm run render:60s -- out/<tên>.mp4 --props=<file>`.
+
+## Quy trình làm một bản tin nhiều tin (`NewsVertical`)
 
 1. Copy `news.example.json` → `news.json`, điền tin (ảnh đặt trong `public/images/`, ghi `"image": "images/ten-anh.jpg"`, hoặc URL).
 2. Xem trước: `npm run dev` (Remotion Studio). Chỉ render khi người dùng yêu cầu rõ ràng.

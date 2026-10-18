@@ -36,7 +36,8 @@
     "render:props": "remotion render NewsVertical out/ban-tin.mp4 --props=./news.json",
     "still": "remotion still NewsVertical out/thumbnail.png --frame=150",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "render:60s": "remotion render TinNong60s"
   },
   "allowScripts": {
     "esbuild": false

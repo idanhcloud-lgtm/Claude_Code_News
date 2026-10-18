@@ -81,6 +81,8 @@ export const RemotionRoot: React.FC = () => {
           headline: "Tiêu đề gây chú ý trong 3 giây đầu",
           hookMedia: "",
           hookCredit: "Tên báo / nguồn tư liệu",
+          hookTrimBeforeSeconds: 0,
+          hookFit: "frame",
           shots: [
             {
               media: "",
@@ -89,6 +91,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
             {
               media: "",
@@ -97,6 +100,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
             {
               media: "",
@@ -105,6 +109,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
             {
               media: "",
@@ -113,6 +118,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
             {
               media: "",
@@ -121,6 +127,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
             {
               media: "",
@@ -129,6 +136,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
             {
               media: "",
@@ -137,6 +145,7 @@ export const RemotionRoot: React.FC = () => {
               durationInSeconds: 8,
               trimBeforeSeconds: 0,
               volume: 0,
+              fit: "frame",
             },
           ],
           voiceover: "",
@@ -188,6 +197,8 @@ export const RemotionRoot: React.FC = () => {
             headline: "Tiêu đề gây chú ý trong 3 giây đầu",
             media: "",
             credit: "Tên báo / nguồn tư liệu",
+            trimBeforeSeconds: 0,
+            fit: "frame",
             accentColor: "#e11d2e",
           }}
         />
@@ -204,6 +215,7 @@ export const RemotionRoot: React.FC = () => {
             credit: "Tên báo / nguồn tư liệu",
             trimBeforeSeconds: 0,
             volume: 0,
+            fit: "frame",
             accentColor: "#e11d2e",
           }}
         />

@@ -52,6 +52,8 @@ export const NewsStory60 = ({
   headline,
   hookMedia,
   hookCredit,
+  hookTrimBeforeSeconds,
+  hookFit,
   shots,
   voiceover,
   music,
@@ -75,6 +77,8 @@ export const NewsStory60 = ({
             headline={headline}
             media={hookMedia}
             credit={hookCredit}
+            trimBeforeSeconds={hookTrimBeforeSeconds}
+            fit={hookFit}
             accentColor={accentColor}
           />
         </TransitionSeries.Sequence>
@@ -95,6 +99,7 @@ export const NewsStory60 = ({
                 credit={shot.credit}
                 trimBeforeSeconds={shot.trimBeforeSeconds}
                 volume={shot.volume}
+                fit={shot.fit}
                 accentColor={accentColor}
               />
             </TransitionSeries.Sequence>

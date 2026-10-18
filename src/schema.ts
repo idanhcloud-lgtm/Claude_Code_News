@@ -38,6 +38,8 @@ export const shotSchema = z.object({
   // Video: bỏ qua N giây đầu; âm lượng tiếng gốc (0 = tắt).
   trimBeforeSeconds: z.number().min(0),
   volume: z.number().min(0).max(1),
+  // "frame" cho tư liệu ngang (giữ nguyên khung, nền mờ); "cover" để phủ kín khung dọc.
+  fit: z.enum(["frame", "cover"]),
 });
 
 export const story60Schema = z.object({
@@ -48,6 +50,8 @@ export const story60Schema = z.object({
   headline: z.string(),
   hookMedia: z.string(),
   hookCredit: z.string(),
+  hookTrimBeforeSeconds: z.number().min(0),
+  hookFit: z.enum(["frame", "cover"]),
   shots: z.array(shotSchema).min(1),
   // Giọng đọc và nhạc nền: đường dẫn trong public/ hoặc URL. Để trống nếu không dùng.
   voiceover: z.string(),

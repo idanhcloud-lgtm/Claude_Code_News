@@ -6,7 +6,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { colors } from "../theme";
+import { colors, SAFE } from "../theme";
 
 type BackgroundProps = {
   // Ảnh hoặc video: URL, hoặc đường dẫn trong public/ (vd: "media/canh-1.mp4"). Trống = nền gradient động.
@@ -15,7 +15,14 @@ type BackgroundProps = {
   // Chỉ áp dụng cho video: bỏ qua N giây đầu và âm lượng tiếng gốc (0 = tắt).
   readonly trimBeforeSeconds?: number;
   readonly volume?: number;
+  // "cover": phủ kín khung dọc (cắt bớt hai bên).
+  // "frame": giữ nguyên khung ngang 16:9 ở nửa trên, nền phía sau là chính tư liệu đó làm mờ.
+  // Dùng "frame" cho video/ảnh ngang có chủ thể nhỏ hoặc di chuyển ngang khung.
+  readonly fit?: "cover" | "frame";
 };
+
+// Vị trí khung 16:9 ở chế độ "frame": ngay dưới thanh "TRỰC TIẾP" và thanh tiến độ.
+export const FRAME_TOP = SAFE.top + 120;
 
 const resolveSrc = (src: string) =>
   /^https?:\/\//.test(src) ? src : staticFile(src);
@@ -36,6 +43,7 @@ export const Background = ({
   accentColor,
   trimBeforeSeconds = 0,
   volume = 0,
+  fit = "cover",
 }: BackgroundProps) => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
@@ -44,7 +52,7 @@ export const Background = ({
     extrapolateRight: "clamp",
   });
 
-  const renderMedia = () => {
+  const renderMedia = (extraStyle: React.CSSProperties, muted: boolean) => {
     if (!image) {
       return (
         <div
@@ -62,9 +70,13 @@ export const Background = ({
         <Video
           src={resolveSrc(image)}
           trimBefore={Math.round(trimBeforeSeconds * fps)}
-          volume={volume}
-          muted={volume === 0}
-          style={{ ...cover, scale: interpolate(progress, [0, 1], [1, 1.06]) }}
+          volume={muted ? 0 : volume}
+          muted={muted || volume === 0}
+          style={{
+            ...cover,
+            scale: interpolate(progress, [0, 1], [1, 1.06]),
+            ...extraStyle,
+          }}
         />
       );
     }
@@ -75,14 +87,49 @@ export const Background = ({
           ...cover,
           scale: interpolate(progress, [0, 1], [1.05, 1.18]),
           translate: interpolate(progress, [0, 1], ["0px 0px", "-30px -40px"]),
+          ...extraStyle,
         }}
       />
     );
   };
 
+  if (fit === "frame" && image) {
+    return (
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+        {/* Nền mờ phủ kín khung dọc */}
+        {renderMedia(
+          { filter: "blur(40px) brightness(0.45)", scale: 1.3 },
+          true,
+        )}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(180deg, rgba(5,8,15,0.35) 0%, rgba(5,8,15,0.1) 40%, rgba(5,8,15,0.85) 100%)",
+          }}
+        />
+        {/* Tư liệu gốc giữ nguyên khung 16:9 */}
+        <div
+          style={{
+            position: "absolute",
+            top: FRAME_TOP,
+            left: 0,
+            right: 0,
+            aspectRatio: "16 / 9",
+            overflow: "hidden",
+            boxShadow: "0 30px 80px rgba(0,0,0,0.6)",
+          }}
+        >
+          {renderMedia({}, false)}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-      {renderMedia()}
+      {renderMedia({}, false)}
       {/* Lớp tối giúp chữ luôn dễ đọc trên mọi ảnh/video */}
       <div
         style={{

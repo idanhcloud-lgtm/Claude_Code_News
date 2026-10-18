@@ -14,6 +14,8 @@ type HookSceneProps = {
   readonly headline: string;
   readonly media: string;
   readonly credit: string;
+  readonly trimBeforeSeconds: number;
+  readonly fit: "frame" | "cover";
   readonly accentColor: string;
 };
 
@@ -23,6 +25,8 @@ const HookSceneInner = ({
   headline,
   media,
   credit,
+  trimBeforeSeconds,
+  fit,
   accentColor,
 }: HookSceneProps) => {
   const frame = useCurrentFrame();
@@ -32,7 +36,12 @@ const HookSceneInner = ({
 
   return (
     <>
-      <Background image={media} accentColor={accentColor} />
+      <Background
+        image={media}
+        accentColor={accentColor}
+        trimBeforeSeconds={trimBeforeSeconds}
+        fit={fit}
+      />
       <div
         style={{
           position: "absolute",
@@ -65,7 +74,7 @@ const HookSceneInner = ({
         <div
           style={{
             fontWeight: 800,
-            fontSize: 92,
+            fontSize: 84,
             lineHeight: 1.1,
             textShadow: "0 4px 24px rgba(0,0,0,0.6)",
           }}
