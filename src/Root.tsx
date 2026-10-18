@@ -2,10 +2,14 @@ import { Composition, Folder } from "remotion";
 import { Ticker } from "./elements/Ticker";
 import { TopBar } from "./elements/TopBar";
 import { calculateNewsMetadata, NewsVideo } from "./NewsVideo";
+import { calculateStory60Metadata, NewsStory60 } from "./NewsStory60";
+import { ProgressBar } from "./elements/ProgressBar";
+import { HookScene } from "./scenes/HookScene";
+import { ShotScene } from "./scenes/ShotScene";
 import { IntroScene } from "./scenes/IntroScene";
 import { OutroScene } from "./scenes/OutroScene";
 import { StoryScene } from "./scenes/StoryScene";
-import { newsSchema } from "./schema";
+import { newsSchema, story60Schema } from "./schema";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -60,6 +64,88 @@ export const RemotionRoot: React.FC = () => {
           ],
         }}
       />
+      <Composition
+        id="TinNong60s"
+        component={NewsStory60}
+        schema={story60Schema}
+        calculateMetadata={calculateStory60Metadata}
+        durationInFrames={1800}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          showName: "BẢN TIN 60s",
+          date: "18/10/2026",
+          accentColor: "#e11d2e",
+          category: "Nóng",
+          headline: "Tiêu đề gây chú ý trong 3 giây đầu",
+          hookMedia: "",
+          hookCredit: "Tên báo / nguồn tư liệu",
+          shots: [
+            {
+              media: "",
+              text: "Ý chính 1: chuyện gì vừa xảy ra",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+            {
+              media: "",
+              text: "Ý chính 2: xảy ra ở đâu, khi nào",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+            {
+              media: "",
+              text: "Ý chính 3: con số quan trọng nhất",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+            {
+              media: "",
+              text: "Ý chính 4: ai liên quan, họ nói gì",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+            {
+              media: "",
+              text: "Ý chính 5: nguyên nhân",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+            {
+              media: "",
+              text: "Ý chính 6: ảnh hưởng tới người xem",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+            {
+              media: "",
+              text: "Ý chính 7: diễn biến tiếp theo",
+              credit: "Tên báo / nguồn tư liệu",
+              durationInSeconds: 8,
+              trimBeforeSeconds: 0,
+              volume: 0,
+            },
+          ],
+          voiceover: "",
+          music: "",
+          musicVolume: 0.15,
+          callToAction: "Theo dõi để xem bản tin mỗi ngày",
+          showSafeZone: true,
+        }}
+      />
       <Folder name="Scenes">
         <Composition
           id="IntroScene"
@@ -87,6 +173,37 @@ export const RemotionRoot: React.FC = () => {
             summary: "Tóm tắt 1–2 câu về nội dung chính của tin.",
             image: "",
             source: "Nguồn tin",
+            accentColor: "#e11d2e",
+          }}
+        />
+        <Composition
+          id="HookScene"
+          component={HookScene}
+          durationInFrames={90}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
+            category: "Nóng",
+            headline: "Tiêu đề gây chú ý trong 3 giây đầu",
+            media: "",
+            credit: "Tên báo / nguồn tư liệu",
+            accentColor: "#e11d2e",
+          }}
+        />
+        <Composition
+          id="ShotScene"
+          component={ShotScene}
+          durationInFrames={240}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
+            media: "",
+            text: "Ý chính của cảnh, ngắn gọn 1–2 dòng",
+            credit: "Tên báo / nguồn tư liệu",
+            trimBeforeSeconds: 0,
+            volume: 0,
             accentColor: "#e11d2e",
           }}
         />
@@ -129,6 +246,18 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{
             label: "TIN NHANH",
             items: ["Tin nhanh thứ nhất", "Tin nhanh thứ hai"],
+            accentColor: "#e11d2e",
+            style: { backgroundColor: "#0b1220" },
+          }}
+        />
+        <Composition
+          id="ProgressBar"
+          component={ProgressBar}
+          durationInFrames={300}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
             accentColor: "#e11d2e",
             style: { backgroundColor: "#0b1220" },
           }}

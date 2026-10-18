@@ -8,3 +8,6 @@ out
 
 # Dữ liệu bản tin của từng tập (tạo từ news.example.json)
 news.json
+
+# Tư liệu tải về cho từng video (nặng, không đưa lên git)
+public/media/
