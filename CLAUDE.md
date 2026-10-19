@@ -74,6 +74,8 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
 8. **Ghi nguồn** ở mọi cảnh: `credit` = chủ sở hữu tư liệu ("Video: …", "Ảnh: …"); `hookCredit` thêm báo gốc ("Tin: VnExpress").
 9. **Kiểm tra trước khi render cả video:** `npx remotion render TinNong60s out/check --frames=... --sequence --image-format=jpeg --props=<file>`
    rồi xem các khung hình. Sau đó: `npm run render:60s -- out/<tên>.mp4 --props=<file>`.
+10. **Chuẩn hoá âm lượng cho TikTok** (khoảng −14 LUFS) sau khi render, giữ nguyên hình:
+    `ffmpeg -i out/<tên>.mp4 -c:v copy -af "loudnorm=I=-14:TP=-1.5:LRA=11" -c:a aac -b:a 192k out/<tên>-final.mp4`.
 
 ## Quy trình làm một bản tin nhiều tin (`NewsVertical`)
 
