@@ -1,7 +1,7 @@
 """Tạo giọng đọc + phụ đề cho một tập TinNong60s bằng VieNeu-TTS (offline, miễn phí).
 
 Dùng:
-  .venv-tts/bin/python scripts/make-voiceover.py episodes/<tập>.json [--voice "Minh Triết"]
+  .venv-tts/bin/python scripts/make-voiceover.py episodes/<tập>.json [--voice "Minh Triết"] [--speed 1.2]
 
 Đọc `hookNarration` và `narration` của từng cảnh, rồi ghi ngược vào file tập:
   - hookVoice / voice: file giọng đọc (public/media/<tập>/vo-*.m4a)
@@ -81,20 +81,30 @@ def synth(tts, voice, narration):
     return out, captions
 
 
-def write_m4a(audio, path):
+def write_m4a(audio, path, speed):
+    """Ghi file m4a; speed khác 1 thì tăng/giảm tốc độ nhưng giữ nguyên cao độ (atempo)."""
     wav = path.with_suffix(".wav")
     sf.write(wav, audio, SR)
     subprocess.run(
-        ["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-c:a", "aac", "-b:a", "192k", str(path)],
+        ["ffmpeg", "-v", "error", "-y", "-i", str(wav), "-af", f"atempo={speed}",
+         "-c:a", "aac", "-b:a", "192k", str(path)],
         check=True,
     )
     wav.unlink()
+
+
+def scale_captions(captions, speed):
+    return [
+        {**c, "startMs": round(c["startMs"] / speed), "endMs": round(c["endMs"] / speed)}
+        for c in captions
+    ]
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("episode")
     parser.add_argument("--voice", default="Minh Triết")
+    parser.add_argument("--speed", type=float, default=1.2, help="tốc độ đọc (0.5–2), mặc định 1.2")
     args = parser.parse_args()
 
     from vieneu import Vieneu
@@ -107,19 +117,21 @@ def main():
 
     if ep.get("hookNarration"):
         audio, _ = synth(tts, args.voice, ep["hookNarration"])
-        write_m4a(audio, out_dir / "vo-hook.m4a")
+        write_m4a(audio, out_dir / "vo-hook.m4a", args.speed)
         ep["hookVoice"] = f"media/{episode_path.stem}/vo-hook.m4a"
-        ep["hookDurationInSeconds"] = round(min(10, max(2, len(audio) / SR + TAIL)), 2)
+        seconds = len(audio) / SR / args.speed
+        ep["hookDurationInSeconds"] = round(min(10, max(2, seconds + TAIL)), 2)
         print(f"hook: {ep['hookDurationInSeconds']}s")
 
     for i, shot in enumerate(ep["shots"], start=1):
         if not shot.get("narration"):
             continue
         audio, captions = synth(tts, args.voice, shot["narration"])
-        write_m4a(audio, out_dir / f"vo-{i}.m4a")
+        write_m4a(audio, out_dir / f"vo-{i}.m4a", args.speed)
         shot["voice"] = f"media/{episode_path.stem}/vo-{i}.m4a"
-        shot["captions"] = captions
-        shot["durationInSeconds"] = round(min(20, max(2, len(audio) / SR + TAIL)), 2)
+        shot["captions"] = scale_captions(captions, args.speed)
+        seconds = len(audio) / SR / args.speed
+        shot["durationInSeconds"] = round(min(20, max(2, seconds + TAIL)), 2)
         print(f"cảnh {i}: {shot['durationInSeconds']}s, {len(captions)} cụm phụ đề")
 
     episode_path.write_text(json.dumps(ep, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

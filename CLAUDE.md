@@ -63,7 +63,7 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
    - Cài một lần: `python3 -m venv .venv-tts && .venv-tts/bin/pip install -r scripts/requirements-tts.txt`.
    - Viết `hookNarration` và `narration` cho từng cảnh (1–2 câu, giọng văn nói). Số/ngày/đơn vị viết dạng
      `[hiển thị|đọc]`, vd `[28/10|hai mươi tám tháng mười]`, `[15°C|mười lăm độ C]`.
-   - Chạy `.venv-tts/bin/python scripts/make-voiceover.py episodes/<tập>.json` → tự tạo `voice`, `captions`
+   - Chạy `.venv-tts/bin/python scripts/make-voiceover.py episodes/<tập>.json` (tốc độ đọc mặc định **1.2x**, đổi bằng `--speed`) → tự tạo `voice`, `captions`
      (phụ đề chạy theo từng cụm lời) và đặt lại `durationInSeconds` theo giọng đọc. Có phụ đề thì cảnh hiện phụ đề thay cho `text`.
    - Nhạc nền khi có giọng đọc: `musicVolume` ≈ 0.2.
    - Ảnh/video bị cắt mất chủ thể (vd đầu người): đặt `focusY` (0 = giữ phần trên, 1 = phần dưới).

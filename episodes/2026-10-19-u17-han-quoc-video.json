@@ -17,7 +17,7 @@
       "narration": "Tháng năm vừa qua, U17 Việt Nam thắng UAE [3-2|ba hai], lần đầu tiên giành vé dự World Cup U17.",
       "label": "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026",
       "credit": "Video: TV360",
-      "durationInSeconds": 6.75,
+      "durationInSeconds": 5.79,
       "trimBeforeSeconds": 9,
       "volume": 0,
       "fit": "frame",
@@ -25,22 +25,22 @@
       "captions": [
         {
           "text": "Tháng năm vừa qua",
-          "startMs": 250,
-          "endMs": 1099,
+          "startMs": 208,
+          "endMs": 965,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "U17 Việt Nam thắng UAE 3-2",
-          "startMs": 1219,
-          "endMs": 3586,
+          "startMs": 1065,
+          "endMs": 2879,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "lần đầu tiên giành vé dự World Cup U17.",
-          "startMs": 3706,
-          "endMs": 5999,
+          "startMs": 2979,
+          "endMs": 5086,
           "timestampMs": null,
           "confidence": null
         }
@@ -52,7 +52,7 @@
       "narration": "Chiều [19/10|mười chín tháng mười], đội có buổi tập đầu tiên tại thành phố Cheonan, mở đầu [10|mười] ngày tập huấn.",
       "label": "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026",
       "credit": "Video: TV360",
-      "durationInSeconds": 6.0,
+      "durationInSeconds": 4.96,
       "trimBeforeSeconds": 17.6,
       "volume": 0,
       "fit": "frame",
@@ -60,22 +60,22 @@
       "captions": [
         {
           "text": "Chiều 19/10",
-          "startMs": 250,
-          "endMs": 1284,
+          "startMs": 208,
+          "endMs": 1036,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "đội có buổi tập đầu tiên tại thành phố Cheonan",
-          "startMs": 1404,
-          "endMs": 3687,
+          "startMs": 1136,
+          "endMs": 2974,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "mở đầu 10 ngày tập huấn.",
-          "startMs": 3807,
-          "endMs": 5254,
+          "startMs": 3074,
+          "endMs": 4256,
           "timestampMs": null,
           "confidence": null
         }
@@ -87,7 +87,7 @@
       "narration": "Thầy trò huấn luyện viên Cristiano Roland sẽ đá [3|ba] trận giao hữu, gặp U17 FC Seoul ngày [21/10|hai mươi mốt tháng mười], và U17 Cheonan City ngày [26/10|hai mươi sáu tháng mười].",
       "label": "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026",
       "credit": "Video: TV360",
-      "durationInSeconds": 9.81,
+      "durationInSeconds": 8.74,
       "trimBeforeSeconds": 9,
       "volume": 0,
       "fit": "frame",
@@ -95,22 +95,22 @@
       "captions": [
         {
           "text": "Thầy trò huấn luyện viên Cristiano Roland sẽ đá 3 trận giao hữu",
-          "startMs": 250,
-          "endMs": 3484,
+          "startMs": 208,
+          "endMs": 3180,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "gặp U17 FC Seoul ngày 21/10",
-          "startMs": 3604,
-          "endMs": 6327,
+          "startMs": 3280,
+          "endMs": 5720,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "và U17 Cheonan City ngày 26/10.",
-          "startMs": 6447,
-          "endMs": 9064,
+          "startMs": 5820,
+          "endMs": 8036,
           "timestampMs": null,
           "confidence": null
         }
@@ -122,7 +122,7 @@
       "narration": "Đặc biệt, U17 Việt Nam sẽ so tài với chủ nhà U17 Hàn Quốc vào ngày [28/10|hai mươi tám tháng mười].",
       "label": "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026",
       "credit": "Video: TV360",
-      "durationInSeconds": 5.79,
+      "durationInSeconds": 5.27,
       "trimBeforeSeconds": 33.6,
       "volume": 0,
       "fit": "frame",
@@ -130,8 +130,8 @@
       "captions": [
         {
           "text": "Đặc biệt, U17 Việt Nam sẽ so tài với chủ nhà U17 Hàn Quốc vào ngày 28/10.",
-          "startMs": 250,
-          "endMs": 5043,
+          "startMs": 208,
+          "endMs": 4566,
           "timestampMs": null,
           "confidence": null
         }
@@ -143,7 +143,7 @@
       "narration": "Sau đó, đội tập huấn tại UAE từ ngày [6/11|sáu tháng mười một], trước khi sang Qatar dự World Cup.",
       "label": "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026",
       "credit": "Video: TV360",
-      "durationInSeconds": 5.96,
+      "durationInSeconds": 4.99,
       "trimBeforeSeconds": 30.5,
       "volume": 0,
       "fit": "frame",
@@ -151,15 +151,15 @@
       "captions": [
         {
           "text": "Sau đó, đội tập huấn tại UAE từ ngày 6/11",
-          "startMs": 250,
-          "endMs": 3315,
+          "startMs": 208,
+          "endMs": 2729,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "trước khi sang Qatar dự World Cup.",
-          "startMs": 3435,
-          "endMs": 5205,
+          "startMs": 2829,
+          "endMs": 4287,
           "timestampMs": null,
           "confidence": null
         }
@@ -171,7 +171,7 @@
       "narration": "Ở vòng bảng, U17 Việt Nam gặp Bỉ, New Zealand và Mali. Chúc các chàng trai thi đấu thật thành công!",
       "label": "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026",
       "credit": "Video: TV360",
-      "durationInSeconds": 6.77,
+      "durationInSeconds": 5.6,
       "trimBeforeSeconds": 27,
       "volume": 0,
       "fit": "frame",
@@ -179,22 +179,22 @@
       "captions": [
         {
           "text": "Ở vòng bảng, U17 Việt Nam gặp Bỉ",
-          "startMs": 250,
-          "endMs": 2507,
+          "startMs": 208,
+          "endMs": 2016,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "New Zealand và Mali.",
-          "startMs": 2627,
-          "endMs": 3782,
+          "startMs": 2116,
+          "endMs": 3111,
           "timestampMs": null,
           "confidence": null
         },
         {
           "text": "Chúc các chàng trai thi đấu thật thành công!",
-          "startMs": 4082,
-          "endMs": 6022,
+          "startMs": 3361,
+          "endMs": 4904,
           "timestampMs": null,
           "confidence": null
         }
@@ -207,5 +207,5 @@
   "callToAction": "Theo dõi để cập nhật tin U17 Việt Nam",
   "showSafeZone": false,
   "hookVoice": "media/2026-10-19-u17-han-quoc-video/vo-hook.m4a",
-  "hookDurationInSeconds": 6.19
+  "hookDurationInSeconds": 5.34
 }
