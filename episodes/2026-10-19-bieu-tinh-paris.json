@@ -1,0 +1,57 @@
+{
+  "showName": "BẢN TIN NÓNG",
+  "date": "17/10/2026",
+  "accentColor": "#e11d2e",
+  "category": "Pháp",
+  "headline": "Paris chìm trong hơi cay ngày biểu tình 17/10",
+  "hookMedia": "media/paris/euronews-fhd.mp4",
+  "hookCredit": "Video: Euronews · Tin: Al Jazeera, Euronews",
+  "hookTrimBeforeSeconds": 7.2,
+  "hookFit": "frame",
+  "shots": [
+    {
+      "media": "media/paris/euronews-fhd.mp4",
+      "text": "Khoảng 550.000 người biểu tình khắp nước Pháp, riêng Paris 110.000",
+      "credit": "Video: Euronews",
+      "durationInSeconds": 5.5,
+      "trimBeforeSeconds": 18.4,
+      "volume": 0,
+      "fit": "frame"
+    },
+    {
+      "media": "media/paris/euronews-fhd.mp4",
+      "text": "Học sinh, sinh viên, công đoàn và “Áo vàng” phản đối giá cả leo thang",
+      "credit": "Video: Euronews",
+      "durationInSeconds": 6.5,
+      "trimBeforeSeconds": 57,
+      "volume": 0,
+      "fit": "frame",
+      "cutBottom": 0.22
+    },
+    {
+      "media": "media/paris/euronews-fhd.mp4",
+      "text": "Cảnh sát dùng hơi cay, lựu đạn gây choáng quanh quảng trường République",
+      "credit": "Video: Euronews",
+      "durationInSeconds": 6,
+      "trimBeforeSeconds": 39.6,
+      "volume": 0,
+      "fit": "frame",
+      "cutBottom": 0.22
+    },
+    {
+      "media": "media/paris/euronews-fhd.mp4",
+      "text": "Gần 1.800 người bị bắt, hơn 500 cảnh sát và lính cứu hoả bị thương",
+      "credit": "Video: Euronews",
+      "durationInSeconds": 7.33,
+      "trimBeforeSeconds": 64,
+      "volume": 0,
+      "fit": "frame",
+      "cutBottom": 0.22
+    }
+  ],
+  "voiceover": "",
+  "music": "media/paris/music-tension.m4a",
+  "musicVolume": 0.9,
+  "callToAction": "Theo dõi để cập nhật diễn biến",
+  "showSafeZone": false
+}

@@ -16,6 +16,7 @@ type HookSceneProps = {
   readonly credit: string;
   readonly trimBeforeSeconds: number;
   readonly fit: "frame" | "cover";
+  readonly cutBottom?: number;
   readonly accentColor: string;
 };
 
@@ -27,6 +28,7 @@ const HookSceneInner = ({
   credit,
   trimBeforeSeconds,
   fit,
+  cutBottom,
   accentColor,
 }: HookSceneProps) => {
   const frame = useCurrentFrame();
@@ -41,6 +43,7 @@ const HookSceneInner = ({
         accentColor={accentColor}
         trimBeforeSeconds={trimBeforeSeconds}
         fit={fit}
+        cutBottom={cutBottom}
       />
       <div
         style={{

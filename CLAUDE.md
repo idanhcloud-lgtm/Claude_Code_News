@@ -32,7 +32,9 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
 3. Đổi giây sang frame qua `fps` từ `useVideoConfig()`; dùng `scale` / `translate` / `rotate` thay cho `transform`.
 4. Cỡ chữ tối thiểu ở khung 1080px: tiêu đề ≥ 84px, chữ phụ quan trọng ≥ 44px. Tiêu đề tin nên ≤ 2–3 dòng.
 5. Chữ tiếng Việt dùng `fontFamily` từ `src/theme.ts` (Be Vietnam Pro, weight 400/600/800).
-6. Ảnh dùng `<Img>` của `remotion`; video/âm thanh dùng `@remotion/media` (`<Video>`, `<Audio>`) để render mượt, không mất khung.
+6. Không đặt tên prop của component tạo bằng `Interactive.create()` trùng tên dành riêng của Remotion
+   (`from`, `durationInFrames`, `style`, `cropLeft/Right/Top/Bottom`, `width`, `height`, …) — TypeScript sẽ báo lỗi.
+7. Ảnh dùng `<Img>` của `remotion`; video/âm thanh dùng `@remotion/media` (`<Video>`, `<Audio>`) để render mượt, không mất khung.
 
 ## Quy trình: người dùng gửi link 1 tin → video 60 giây (`TinNong60s`)
 
@@ -52,8 +54,12 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
    hook 3s (tiêu đề ≤ ~45 ký tự) + 6–8 cảnh, mỗi cảnh một ý ≤ ~75 ký tự, chỉ dùng thông tin có trong bài.
    Muốn đúng 60s: tổng `durationInSeconds` các cảnh ≈ 54 + 0,25 × (số cảnh + 1).
    Tư liệu ngang dùng `"fit": "frame"`; ảnh/video dọc dùng `"cover"`.
-6. **Ghi nguồn** ở mọi cảnh: `credit` = chủ sở hữu tư liệu ("Video: …", "Ảnh: …"); `hookCredit` thêm báo gốc ("Tin: VnExpress").
-7. **Kiểm tra trước khi render cả video:** `npx remotion render TinNong60s out/check --frames=... --sequence --image-format=jpeg --props=<file>`
+   Video nguồn có phụ đề/chữ in sẵn ở mép dưới: đặt `"cutBottom": 0.15–0.25` để cắt bỏ; tránh các đoạn có tiêu đề in giữa khung.
+   Video ngắn hơn (vd 30s): tổng cảnh ≈ (thời lượng − 6) + 0,27 × (số cảnh + 1).
+6. **Nhạc nền** khi không có giọng đọc: `python3 scripts/make-tension-music.py <giây> <ra.wav> [bpm]` tự soạn nhạc tin tức
+   căng thẳng (không bản quyền), rồi đổi sang `.m4a` bằng ffmpeg, đặt vào `public/media/<chủ-đề>/` và trường `music`.
+7. **Ghi nguồn** ở mọi cảnh: `credit` = chủ sở hữu tư liệu ("Video: …", "Ảnh: …"); `hookCredit` thêm báo gốc ("Tin: VnExpress").
+8. **Kiểm tra trước khi render cả video:** `npx remotion render TinNong60s out/check --frames=... --sequence --image-format=jpeg --props=<file>`
    rồi xem các khung hình. Sau đó: `npm run render:60s -- out/<tên>.mp4 --props=<file>`.
 
 ## Quy trình làm một bản tin nhiều tin (`NewsVertical`)

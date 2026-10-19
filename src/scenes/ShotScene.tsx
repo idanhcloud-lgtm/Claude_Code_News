@@ -16,6 +16,7 @@ type ShotSceneProps = {
   readonly trimBeforeSeconds: number;
   readonly volume: number;
   readonly fit: "frame" | "cover";
+  readonly cutBottom?: number;
   readonly accentColor: string;
 };
 
@@ -27,6 +28,7 @@ const ShotSceneInner = ({
   trimBeforeSeconds,
   volume,
   fit,
+  cutBottom,
   accentColor,
 }: ShotSceneProps) => {
   const frame = useCurrentFrame();
@@ -45,6 +47,7 @@ const ShotSceneInner = ({
         trimBeforeSeconds={trimBeforeSeconds}
         volume={volume}
         fit={fit}
+        cutBottom={cutBottom}
       />
       <div
         style={{

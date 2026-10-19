@@ -19,6 +19,8 @@ type BackgroundProps = {
   // "frame": giữ nguyên khung ngang 16:9 ở nửa trên, nền phía sau là chính tư liệu đó làm mờ.
   // Dùng "frame" cho video/ảnh ngang có chủ thể nhỏ hoặc di chuyển ngang khung.
   readonly fit?: "cover" | "frame";
+  // Chỉ cho "frame": cắt bỏ phần mép dưới (0–0.4), vd để giấu phụ đề in sẵn trong video nguồn.
+  readonly cutBottom?: number;
 };
 
 // Vị trí khung 16:9 ở chế độ "frame": ngay dưới thanh "TRỰC TIẾP" và thanh tiến độ.
@@ -44,6 +46,7 @@ export const Background = ({
   trimBeforeSeconds = 0,
   volume = 0,
   fit = "cover",
+  cutBottom = 0,
 }: BackgroundProps) => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
@@ -116,12 +119,12 @@ export const Background = ({
             top: FRAME_TOP,
             left: 0,
             right: 0,
-            aspectRatio: "16 / 9",
+            aspectRatio: `16 / ${9 * (1 - cutBottom)}`,
             overflow: "hidden",
             boxShadow: "0 30px 80px rgba(0,0,0,0.6)",
           }}
         >
-          {renderMedia({}, false)}
+          {renderMedia({ height: `${100 / (1 - cutBottom)}%` }, false)}
         </div>
       </div>
     );
