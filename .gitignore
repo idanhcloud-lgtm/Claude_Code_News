@@ -11,3 +11,6 @@ news.json
 
 # Tư liệu tải về cho từng video (nặng, không đưa lên git)
 public/media/
+
+# Môi trường Python cho giọng đọc (scripts/requirements-tts.txt)
+.venv-tts/

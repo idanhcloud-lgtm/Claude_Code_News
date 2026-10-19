@@ -41,6 +41,8 @@ const IntroSceneInner = ({ showName, date, accentColor }: IntroSceneProps) => {
           style={{
             fontWeight: 800,
             fontSize: 120,
+            // Chia dòng cân đối, tránh để một chữ lẻ ở dòng dưới.
+            textWrap: "balance",
             lineHeight: 1.05,
             letterSpacing: 2,
             opacity: interpolate(frame, [0.3 * fps, 0.8 * fps], [0, 1], {

@@ -1,11 +1,6 @@
 import { Video } from "@remotion/media";
-import {
-  Img,
-  interpolate,
-  staticFile,
-  useCurrentFrame,
-  useVideoConfig,
-} from "remotion";
+import { Img, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { isVideo, resolveSrc } from "../media";
 import { colors, SAFE } from "../theme";
 
 type BackgroundProps = {
@@ -21,15 +16,12 @@ type BackgroundProps = {
   readonly fit?: "cover" | "frame";
   // Chỉ cho "frame": cắt bỏ phần mép dưới (0–0.4), vd để giấu phụ đề in sẵn trong video nguồn.
   readonly cutBottom?: number;
+  // Phần ảnh/video được giữ khi phải cắt: 0 = mép trên, 0.5 = giữa, 1 = mép dưới.
+  readonly focusY?: number;
 };
 
 // Vị trí khung 16:9 ở chế độ "frame": ngay dưới thanh tên kênh và thanh tiến độ.
 export const FRAME_TOP = SAFE.top + 120;
-
-const resolveSrc = (src: string) =>
-  /^https?:\/\//.test(src) ? src : staticFile(src);
-
-const isVideo = (src: string) => /\.(mp4|webm|mov|m4v|mkv)(\?.*)?$/i.test(src);
 
 const cover = {
   position: "absolute",
@@ -47,6 +39,7 @@ export const Background = ({
   volume = 0,
   fit = "cover",
   cutBottom = 0,
+  focusY = 0.5,
 }: BackgroundProps) => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
@@ -55,6 +48,7 @@ export const Background = ({
     extrapolateRight: "clamp",
   });
 
+  const objectPosition = `50% ${focusY * 100}%`;
   const renderMedia = (extraStyle: React.CSSProperties, muted: boolean) => {
     if (!image) {
       return (
@@ -77,6 +71,7 @@ export const Background = ({
           muted={muted || volume === 0}
           style={{
             ...cover,
+            objectPosition,
             scale: interpolate(progress, [0, 1], [1, 1.06]),
             ...extraStyle,
           }}
@@ -88,6 +83,7 @@ export const Background = ({
         src={resolveSrc(image)}
         style={{
           ...cover,
+          objectPosition,
           scale: interpolate(progress, [0, 1], [1.05, 1.18]),
           translate: interpolate(progress, [0, 1], ["0px 0px", "-30px -40px"]),
           ...extraStyle,

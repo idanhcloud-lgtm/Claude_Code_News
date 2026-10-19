@@ -1,0 +1,198 @@
+{
+  "showName": "TIN NHANH 1 PHÚT",
+  "date": "19/10/2026",
+  "accentColor": "#e11d2e",
+  "category": "Bóng đá",
+  "headline": "U17 Việt Nam tập buổi đầu tiên tại Hàn Quốc",
+  "hookMedia": "media/2026-10-19-u17-han-quoc/VFF-WM-1-2.jpg",
+  "hookCredit": "Ảnh: VFF · Tin: VFF, Thanh Niên",
+  "hookTrimBeforeSeconds": 0,
+  "hookFit": "frame",
+  "hookNarration": "U17 Việt Nam đã có mặt tại Hàn Quốc, bắt đầu hành trình hướng tới World Cup!",
+  "shots": [
+    {
+      "media": "media/2026-10-19-u17-han-quoc/VFFM-3.jpg",
+      "text": "Buổi tập đầu tiên tại Cheonan, Hàn Quốc",
+      "narration": "Chiều [19/10|mười chín tháng mười], các cầu thủ U17 Việt Nam có buổi tập đầu tiên tại thành phố Cheonan. Đây là đợt tập huấn kéo dài [10|mười] ngày.",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 7.82,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-19-u17-han-quoc/vo-1.m4a",
+      "captions": [
+        {
+          "text": "Chiều 19/10",
+          "startMs": 250,
+          "endMs": 1228,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "các cầu thủ U17 Việt Nam có buổi tập đầu tiên tại thành phố Cheonan.",
+          "startMs": 1348,
+          "endMs": 4860,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Đây là đợt tập huấn kéo dài 10 ngày.",
+          "startMs": 5160,
+          "endMs": 7068,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-19-u17-han-quoc/VFF-WM-127.jpg",
+      "text": "Thời tiết khoảng 15°C, thuận lợi để tập luyện",
+      "narration": "Thời tiết khoảng [15°C|mười lăm độ C], rất thuận lợi để thầy trò huấn luyện viên Cristiano Roland duy trì cường độ tập luyện.",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 6.67,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-19-u17-han-quoc/vo-2.m4a",
+      "captions": [
+        {
+          "text": "Thời tiết khoảng 15°C",
+          "startMs": 250,
+          "endMs": 1626,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "rất thuận lợi để thầy trò huấn luyện viên Cristiano Roland duy trì cường độ tập luyện.",
+          "startMs": 1746,
+          "endMs": 5921,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ],
+      "focusY": 0.1
+    },
+    {
+      "media": "media/2026-10-19-u17-han-quoc/VFFM-1-2.jpg",
+      "text": "3 trận giao hữu: FC Seoul 21/10, Cheonan City 26/10",
+      "narration": "Đội sẽ đá [3|ba] trận giao hữu, gặp U17 FC Seoul ngày [21/10|hai mươi mốt tháng mười], và U17 Cheonan City ngày [26/10|hai mươi sáu tháng mười].",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 8.23,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-19-u17-han-quoc/vo-3.m4a",
+      "captions": [
+        {
+          "text": "Đội sẽ đá 3 trận giao hữu",
+          "startMs": 250,
+          "endMs": 1950,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "gặp U17 FC Seoul ngày 21/10",
+          "startMs": 2070,
+          "endMs": 4687,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "và U17 Cheonan City ngày 26/10.",
+          "startMs": 4807,
+          "endMs": 7485,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-19-u17-han-quoc/VFFM-2.jpg",
+      "text": "28/10: so tài chủ nhà U17 Hàn Quốc",
+      "narration": "Đặc biệt, U17 Việt Nam sẽ so tài với chủ nhà U17 Hàn Quốc vào ngày [28/10|hai mươi tám tháng mười].",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 6.23,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-19-u17-han-quoc/vo-4.m4a",
+      "captions": [
+        {
+          "text": "Đặc biệt, U17 Việt Nam sẽ so tài với chủ nhà U17 Hàn Quốc vào ngày 28/10.",
+          "startMs": 250,
+          "endMs": 5478,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-19-u17-han-quoc/IMG_7731.jpg",
+      "text": "Tập huấn tại UAE từ 6/11, rồi sang Qatar",
+      "narration": "Sau đó, đội về nước rồi tập huấn tại UAE từ ngày [6/11|sáu tháng mười một], trước khi sang Qatar dự World Cup.",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 5.92,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-19-u17-han-quoc/vo-5.m4a",
+      "captions": [
+        {
+          "text": "Sau đó, đội về nước rồi tập huấn tại UAE từ ngày 6/11",
+          "startMs": 250,
+          "endMs": 3421,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "trước khi sang Qatar dự World Cup.",
+          "startMs": 3541,
+          "endMs": 5175,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-19-u17-han-quoc/VFFM-3.jpg",
+      "text": "Vòng bảng: Bỉ, New Zealand, Mali",
+      "narration": "Ở vòng bảng, U17 Việt Nam lần lượt gặp Bỉ, New Zealand và Mali. Chúc các chàng trai thi đấu thật thành công!",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 7.16,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-19-u17-han-quoc/vo-6.m4a",
+      "captions": [
+        {
+          "text": "Ở vòng bảng, U17 Việt Nam lần lượt gặp Bỉ",
+          "startMs": 250,
+          "endMs": 2814,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "New Zealand và Mali.",
+          "startMs": 2934,
+          "endMs": 4216,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Chúc các chàng trai thi đấu thật thành công!",
+          "startMs": 4516,
+          "endMs": 6410,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    }
+  ],
+  "voiceover": "",
+  "music": "media/2026-10-19-u17-han-quoc/music.m4a",
+  "musicVolume": 0.2,
+  "callToAction": "Theo dõi để cập nhật tin U17 Việt Nam",
+  "showSafeZone": false,
+  "hookVoice": "media/2026-10-19-u17-han-quoc/vo-hook.m4a",
+  "hookDurationInSeconds": 5.26
+}

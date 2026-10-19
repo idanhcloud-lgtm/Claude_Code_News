@@ -5,11 +5,11 @@ import React from "react";
 import {
   AbsoluteFill,
   type CalculateMetadataFunction,
-  staticFile,
   Track,
   useVideoConfig,
 } from "remotion";
 import { ProgressBar } from "./elements/ProgressBar";
+import { resolveSrc } from "./media";
 import { SafeZoneGuide } from "./elements/SafeZoneGuide";
 import { TopBar } from "./elements/TopBar";
 import { HookScene } from "./scenes/HookScene";
@@ -18,12 +18,9 @@ import { ShotScene } from "./scenes/ShotScene";
 import type { Story60Props } from "./schema";
 import { colors, OUTRO_SECONDS, TRANSITION_FRAMES } from "./theme";
 
-const HOOK_SECONDS = 3;
+const DEFAULT_HOOK_SECONDS = 3;
 // Cắt cảnh nhanh hơn bản tin nhiều tin cho nhịp dồn dập.
 const CUT_FRAMES = Math.round(TRANSITION_FRAMES / 2);
-
-const resolveSrc = (src: string) =>
-  /^https?:\/\//.test(src) ? src : staticFile(src);
 
 // Thời lượng = hook + các cảnh + outro − phần chồng của chuyển cảnh.
 // Muốn đúng 60 giây: tổng durationInSeconds của các cảnh ≈ 54 + 0,25 × (số cảnh + 1).
@@ -32,7 +29,7 @@ export const calculateStory60Metadata: CalculateMetadataFunction<
 > = ({ props }) => {
   const fps = 30;
   const scenes =
-    HOOK_SECONDS * fps +
+    Math.round((props.hookDurationInSeconds ?? DEFAULT_HOOK_SECONDS) * fps) +
     props.shots.reduce(
       (sum, s) => sum + Math.round(s.durationInSeconds * fps),
       0,
@@ -55,6 +52,9 @@ export const NewsStory60 = ({
   hookTrimBeforeSeconds,
   hookFit,
   hookCutBottom,
+  hookFocusY,
+  hookDurationInSeconds,
+  hookVoice,
   shots,
   voiceover,
   music,
@@ -70,7 +70,9 @@ export const NewsStory60 = ({
       <TransitionSeries name="Scenes">
         <TransitionSeries.Sequence
           name="Hook"
-          durationInFrames={HOOK_SECONDS * fps}
+          durationInFrames={Math.round(
+            (hookDurationInSeconds ?? DEFAULT_HOOK_SECONDS) * fps,
+          )}
         >
           <HookScene
             name="Hook"
@@ -81,6 +83,8 @@ export const NewsStory60 = ({
             trimBeforeSeconds={hookTrimBeforeSeconds}
             fit={hookFit}
             cutBottom={hookCutBottom}
+            focusY={hookFocusY}
+            voice={hookVoice}
             accentColor={accentColor}
           />
         </TransitionSeries.Sequence>
@@ -103,6 +107,9 @@ export const NewsStory60 = ({
                 volume={shot.volume}
                 fit={shot.fit}
                 cutBottom={shot.cutBottom}
+                focusY={shot.focusY}
+                voice={shot.voice}
+                captions={shot.captions}
                 accentColor={accentColor}
               />
             </TransitionSeries.Sequence>

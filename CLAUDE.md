@@ -59,10 +59,20 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
    Tư liệu ngang dùng `"fit": "frame"`; ảnh/video dọc dùng `"cover"`.
    Video nguồn có phụ đề/chữ in sẵn ở mép dưới: đặt `"cutBottom": 0.15–0.25` để cắt bỏ; tránh các đoạn có tiêu đề in giữa khung.
    Video ngắn hơn (vd 30s): tổng cảnh ≈ (thời lượng − 6) + 0,27 × (số cảnh + 1).
-6. **Nhạc nền** khi không có giọng đọc: `python3 scripts/make-tension-music.py <giây> <ra.wav> [bpm]` tự soạn nhạc tin tức
-   căng thẳng (không bản quyền), rồi đổi sang `.m4a` bằng ffmpeg, đặt vào `public/media/<chủ-đề>/` và trường `music`.
-7. **Ghi nguồn** ở mọi cảnh: `credit` = chủ sở hữu tư liệu ("Video: …", "Ảnh: …"); `hookCredit` thêm báo gốc ("Tin: VnExpress").
-8. **Kiểm tra trước khi render cả video:** `npx remotion render TinNong60s out/check --frames=... --sequence --image-format=jpeg --props=<file>`
+6. **Giọng đọc (mặc định có):** giọng **"Minh Triết"** (nam, giọng Nam, phong cách tin tức) của VieNeu-TTS — offline, miễn phí.
+   - Cài một lần: `python3 -m venv .venv-tts && .venv-tts/bin/pip install -r scripts/requirements-tts.txt`.
+   - Viết `hookNarration` và `narration` cho từng cảnh (1–2 câu, giọng văn nói). Số/ngày/đơn vị viết dạng
+     `[hiển thị|đọc]`, vd `[28/10|hai mươi tám tháng mười]`, `[15°C|mười lăm độ C]`.
+   - Chạy `.venv-tts/bin/python scripts/make-voiceover.py episodes/<tập>.json` → tự tạo `voice`, `captions`
+     (phụ đề chạy theo từng cụm lời) và đặt lại `durationInSeconds` theo giọng đọc. Có phụ đề thì cảnh hiện phụ đề thay cho `text`.
+   - Nhạc nền khi có giọng đọc: `musicVolume` ≈ 0.2.
+   - Ảnh/video bị cắt mất chủ thể (vd đầu người): đặt `focusY` (0 = giữ phần trên, 1 = phần dưới).
+7. **Nhạc nền:** `python3 scripts/make-tension-music.py <giây> <ra.wav> [bpm] [tension|upbeat]` tự soạn nhạc
+   (không bản quyền): `tension` cho tin nóng/biểu tình, `upbeat` (bpm ~118) cho thể thao/tin vui. Độ dài = thời lượng
+   video (xem bằng `npx remotion compositions --props=<tập>`). Đổi sang `.m4a` bằng ffmpeg, đặt vào
+   `public/media/<tập>/` và trường `music`.
+8. **Ghi nguồn** ở mọi cảnh: `credit` = chủ sở hữu tư liệu ("Video: …", "Ảnh: …"); `hookCredit` thêm báo gốc ("Tin: VnExpress").
+9. **Kiểm tra trước khi render cả video:** `npx remotion render TinNong60s out/check --frames=... --sequence --image-format=jpeg --props=<file>`
    rồi xem các khung hình. Sau đó: `npm run render:60s -- out/<tên>.mp4 --props=<file>`.
 
 ## Quy trình làm một bản tin nhiều tin (`NewsVertical`)

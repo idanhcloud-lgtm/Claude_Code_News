@@ -5,7 +5,11 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import type { Caption } from "@remotion/captions";
+import { Audio } from "@remotion/media";
 import { Background } from "../elements/Background";
+import { Captions } from "../elements/Captions";
+import { resolveSrc } from "../media";
 import { Credit } from "../elements/Credit";
 import { colors, fontFamily, SAFE } from "../theme";
 
@@ -17,7 +21,17 @@ type ShotSceneProps = {
   readonly volume: number;
   readonly fit: "frame" | "cover";
   readonly cutBottom?: number;
+  readonly focusY?: number;
+  readonly voice?: string;
+  readonly captions?: Caption[];
   readonly accentColor: string;
+};
+
+const textStyle: React.CSSProperties = {
+  fontWeight: 800,
+  fontSize: 64,
+  lineHeight: 1.18,
+  textShadow: "0 4px 24px rgba(0,0,0,0.6)",
 };
 
 // Một cảnh tư liệu: video/ảnh toàn màn hình + ý chính + nguồn.
@@ -29,6 +43,9 @@ const ShotSceneInner = ({
   volume,
   fit,
   cutBottom,
+  focusY,
+  voice,
+  captions,
   accentColor,
 }: ShotSceneProps) => {
   const frame = useCurrentFrame();
@@ -48,6 +65,7 @@ const ShotSceneInner = ({
         volume={volume}
         fit={fit}
         cutBottom={cutBottom}
+        focusY={focusY}
       />
       <div
         style={{
@@ -62,7 +80,7 @@ const ShotSceneInner = ({
           color: colors.text,
         }}
       >
-        {text ? (
+        {text || captions?.length ? (
           <div
             style={{
               display: "flex",
@@ -79,20 +97,17 @@ const ShotSceneInner = ({
                 flexShrink: 0,
               }}
             />
-            <div
-              style={{
-                fontWeight: 800,
-                fontSize: 64,
-                lineHeight: 1.18,
-                textShadow: "0 4px 24px rgba(0,0,0,0.6)",
-              }}
-            >
-              {text}
-            </div>
+            {/* Có phụ đề theo giọng đọc thì hiện phụ đề, không thì hiện ý chính cố định */}
+            {captions?.length ? (
+              <Captions captions={captions} style={textStyle} />
+            ) : (
+              <div style={textStyle}>{text}</div>
+            )}
           </div>
         ) : null}
         <Credit credit={credit} />
       </div>
+      {voice ? <Audio src={resolveSrc(voice)} /> : null}
     </>
   );
 };

@@ -46,6 +46,8 @@ const OutroSceneInner = ({
           style={{
             fontWeight: 800,
             fontSize: 100,
+            // Chia dòng cân đối, tránh để một chữ lẻ ở dòng dưới.
+            textWrap: "balance",
             opacity: pop,
             scale: interpolate(pop, [0, 1], [0.9, 1]),
           }}

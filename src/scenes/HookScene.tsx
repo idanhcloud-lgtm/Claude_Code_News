@@ -5,7 +5,9 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { Audio } from "@remotion/media";
 import { Background } from "../elements/Background";
+import { resolveSrc } from "../media";
 import { Credit } from "../elements/Credit";
 import { colors, fontFamily, SAFE } from "../theme";
 
@@ -17,6 +19,8 @@ type HookSceneProps = {
   readonly trimBeforeSeconds: number;
   readonly fit: "frame" | "cover";
   readonly cutBottom?: number;
+  readonly focusY?: number;
+  readonly voice?: string;
   readonly accentColor: string;
 };
 
@@ -29,6 +33,8 @@ const HookSceneInner = ({
   trimBeforeSeconds,
   fit,
   cutBottom,
+  focusY,
+  voice,
   accentColor,
 }: HookSceneProps) => {
   const frame = useCurrentFrame();
@@ -44,6 +50,7 @@ const HookSceneInner = ({
         trimBeforeSeconds={trimBeforeSeconds}
         fit={fit}
         cutBottom={cutBottom}
+        focusY={focusY}
       />
       <div
         style={{
@@ -105,6 +112,7 @@ const HookSceneInner = ({
         </div>
         <Credit credit={credit} />
       </div>
+      {voice ? <Audio src={resolveSrc(voice)} /> : null}
     </>
   );
 };

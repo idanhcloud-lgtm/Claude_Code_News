@@ -1,6 +1,8 @@
 """Soạn nhạc nền tin tức căng thẳng (không bản quyền) bằng tổng hợp âm thanh.
 
-Dùng: python3 scripts/make-tension-music.py <số-giây> <file-ra.wav> [bpm]
+Dùng: python3 scripts/make-tension-music.py <số-giây> <file-ra.wav> [bpm] [tension|upbeat]
+"tension" (mặc định): giọng thứ, căng thẳng — tin nóng, biểu tình, thiên tai.
+"upbeat": giọng trưởng, sôi động — thể thao, tin vui.
 Gồm: tiếng trầm nền (drone), nhịp dây staccato dồn dập, tiếng tích tắc,
 trống trầm mỗi ô nhịp, đoạn dâng (riser) và cú nện kết.
 """
@@ -32,6 +34,7 @@ def main():
     seconds = float(sys.argv[1])
     out = sys.argv[2]
     bpm = float(sys.argv[3]) if len(sys.argv) > 3 else 100
+    upbeat = len(sys.argv) > 4 and sys.argv[4] == "upbeat"
     beat = 60 / bpm
     n = int(seconds * SR)
     t = np.arange(n) / SR
@@ -43,12 +46,15 @@ def main():
     drone = (
         np.sin(2 * np.pi * 55 * t)
         + 0.6 * np.sin(2 * np.pi * 55.4 * t)
-        + 0.35 * np.sin(2 * np.pi * 82.4 * t)
+        + 0.35 * np.sin(2 * np.pi * (69.3 if upbeat else 82.4) * t)
     )
     mix += 0.22 * drone * swell
 
     # Nhịp dây staccato theo móc đơn: La - La - Đô - La - Si giáng (thứ, căng thẳng).
     notes = [110.0, 110.0, 130.81, 110.0, 116.54, 110.0, 130.81, 146.83]
+    if upbeat:
+        # La trưởng: La - Đô thăng - Mi - Fa thăng, đi lên tươi sáng.
+        notes = [110.0, 138.59, 164.81, 138.59, 146.83, 164.81, 185.0, 164.81]
     eighth = beat / 2
     pulse = np.zeros(n)
     k = 0
