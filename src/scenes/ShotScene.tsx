@@ -7,6 +7,7 @@ import {
 } from "remotion";
 import type { Caption } from "@remotion/captions";
 import { Audio } from "@remotion/media";
+import { ArchiveLabel } from "../elements/ArchiveLabel";
 import { Background } from "../elements/Background";
 import { Captions } from "../elements/Captions";
 import { resolveSrc } from "../media";
@@ -22,6 +23,7 @@ type ShotSceneProps = {
   readonly fit: "frame" | "cover";
   readonly cutBottom?: number;
   readonly focusY?: number;
+  readonly label?: string;
   readonly voice?: string;
   readonly captions?: Caption[];
   readonly accentColor: string;
@@ -44,6 +46,7 @@ const ShotSceneInner = ({
   fit,
   cutBottom,
   focusY,
+  label,
   voice,
   captions,
   accentColor,
@@ -67,6 +70,7 @@ const ShotSceneInner = ({
         cutBottom={cutBottom}
         focusY={focusY}
       />
+      <ArchiveLabel label={label} />
       <div
         style={{
           position: "absolute",

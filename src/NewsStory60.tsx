@@ -53,6 +53,7 @@ export const NewsStory60 = ({
   hookFit,
   hookCutBottom,
   hookFocusY,
+  hookLabel,
   hookDurationInSeconds,
   hookVoice,
   shots,
@@ -84,6 +85,7 @@ export const NewsStory60 = ({
             fit={hookFit}
             cutBottom={hookCutBottom}
             focusY={hookFocusY}
+            label={hookLabel}
             voice={hookVoice}
             accentColor={accentColor}
           />
@@ -108,6 +110,7 @@ export const NewsStory60 = ({
                 fit={shot.fit}
                 cutBottom={shot.cutBottom}
                 focusY={shot.focusY}
+                label={shot.label}
                 voice={shot.voice}
                 captions={shot.captions}
                 accentColor={accentColor}

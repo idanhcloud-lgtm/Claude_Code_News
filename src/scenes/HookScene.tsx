@@ -6,6 +6,7 @@ import {
   useVideoConfig,
 } from "remotion";
 import { Audio } from "@remotion/media";
+import { ArchiveLabel } from "../elements/ArchiveLabel";
 import { Background } from "../elements/Background";
 import { resolveSrc } from "../media";
 import { Credit } from "../elements/Credit";
@@ -20,6 +21,7 @@ type HookSceneProps = {
   readonly fit: "frame" | "cover";
   readonly cutBottom?: number;
   readonly focusY?: number;
+  readonly label?: string;
   readonly voice?: string;
   readonly accentColor: string;
 };
@@ -34,6 +36,7 @@ const HookSceneInner = ({
   fit,
   cutBottom,
   focusY,
+  label,
   voice,
   accentColor,
 }: HookSceneProps) => {
@@ -52,6 +55,7 @@ const HookSceneInner = ({
         cutBottom={cutBottom}
         focusY={focusY}
       />
+      <ArchiveLabel label={label} />
       <div
         style={{
           position: "absolute",

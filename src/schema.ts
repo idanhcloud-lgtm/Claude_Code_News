@@ -53,6 +53,8 @@ export const shotSchema = z.object({
   cutBottom: z.number().min(0).max(0.4).optional(),
   // Giữ phần nào khi ảnh/video bị cắt: 0 = trên, 0.5 = giữa (mặc định), 1 = dưới.
   focusY: z.number().min(0).max(1).optional(),
+  // Nhãn trên khung tư liệu cũ, vd "VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026".
+  label: z.string().optional(),
   // Lời đọc của cảnh. scripts/make-voiceover.py đọc trường này, tạo file giọng (voice),
   // phụ đề (captions) và tự đặt durationInSeconds theo độ dài giọng đọc.
   narration: z.string().optional(),
@@ -72,6 +74,7 @@ export const story60Schema = z.object({
   hookFit: z.enum(["frame", "cover"]),
   hookCutBottom: z.number().min(0).max(0.4).optional(),
   hookFocusY: z.number().min(0).max(1).optional(),
+  hookLabel: z.string().optional(),
   // Mặc định 3 giây; make-voiceover.py đặt theo độ dài lời đọc của hook.
   hookDurationInSeconds: z.number().min(2).max(10).optional(),
   hookNarration: z.string().optional(),
