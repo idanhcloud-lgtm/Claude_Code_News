@@ -65,13 +65,14 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
      `[hiển thị|đọc]`, vd `[28/10|hai mươi tám tháng mười]`, `[15°C|mười lăm độ C]`.
    - Chạy `.venv-tts/bin/python scripts/make-voiceover.py episodes/<tập>.json` (tốc độ đọc mặc định **1.2x**, đổi bằng `--speed`) → tự tạo `voice`, `captions`
      (phụ đề chạy theo từng cụm lời) và đặt lại `durationInSeconds` theo giọng đọc. Có phụ đề thì cảnh hiện phụ đề thay cho `text`.
-   - Nhạc nền khi có giọng đọc: `musicVolume` ≈ 0.2.
    - Ảnh/video bị cắt mất chủ thể (vd đầu người): đặt `focusY` (0 = giữ phần trên, 1 = phần dưới).
    - Dùng video cũ (không phải cảnh của sự kiện hôm nay): **bắt buộc** đặt `label` / `hookLabel`,
      vd `"VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026"`, để không gây hiểu nhầm.
    - Video bóng đá: các báo (vd Tuổi Trẻ) thường có MP4 trực tiếp trong thuộc tính `data-vid` của bài; clip có chèn quảng cáo
      và hoạt hình mở/kết, phải soi khung hình để chọn đoạn sạch. YouTube chặn tải từ máy chủ cloud — không lách.
-7. **Nhạc nền:** `python3 scripts/make-tension-music.py <giây> <ra.wav> [bpm] [tension|upbeat]` tự soạn nhạc
+7. **Nhạc nền: MẶC ĐỊNH KHÔNG CHÈN** — để `"music": ""` (người dùng tự thêm nhạc trên TikTok khi đăng).
+   Chỉ chèn khi người dùng yêu cầu rõ cho video đó; khi đó dùng `musicVolume` ≈ 0.2 nếu có giọng đọc, và
+   `python3 scripts/make-tension-music.py <giây> <ra.wav> [bpm] [tension|upbeat]` tự soạn nhạc
    (không bản quyền): `tension` cho tin nóng/biểu tình, `upbeat` (bpm ~118) cho thể thao/tin vui. Độ dài = thời lượng
    video (xem bằng `npx remotion compositions --props=<tập>`). Đổi sang `.m4a` bằng ffmpeg, đặt vào
    `public/media/<tập>/` và trường `music`.
