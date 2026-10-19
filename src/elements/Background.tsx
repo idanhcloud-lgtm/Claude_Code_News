@@ -23,7 +23,7 @@ type BackgroundProps = {
   readonly cutBottom?: number;
 };
 
-// Vị trí khung 16:9 ở chế độ "frame": ngay dưới thanh "TRỰC TIẾP" và thanh tiến độ.
+// Vị trí khung 16:9 ở chế độ "frame": ngay dưới thanh tên kênh và thanh tiến độ.
 export const FRAME_TOP = SAFE.top + 120;
 
 const resolveSrc = (src: string) =>

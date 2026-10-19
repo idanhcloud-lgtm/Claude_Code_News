@@ -5,7 +5,7 @@ type ProgressBarProps = {
   readonly accentColor: string;
 };
 
-// Thanh tiến độ ngay dưới thanh "TRỰC TIẾP" — giúp người xem ở lại tới cuối.
+// Thanh tiến độ ngay dưới thanh tên kênh — giúp người xem ở lại tới cuối.
 const ProgressBarInner = ({ accentColor }: ProgressBarProps) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();

@@ -2,6 +2,9 @@
 
 Dự án tạo video tin tức **dọc 9:16 (1080×1920, 30fps)** cho TikTok / Reels / Shorts bằng Remotion 4.
 
+**Tên kênh: "TIN NHANH 1 PHÚT"**: luôn đặt `showName` = `"TIN NHANH 1 PHÚT"`. Thanh trên chỉ hiện tên kênh + ngày;
+không dùng các chữ "TIN NÓNG", "TRỰC TIẾP" trong layout.
+
 ## Skills Remotion
 
 Bộ skill chính thức của Remotion nằm trong `.claude/skills/` (khoá phiên bản trong `skills-lock.json`).

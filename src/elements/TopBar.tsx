@@ -45,31 +45,17 @@ const TopBarInner = ({ showName, date, accentColor }: TopBarProps) => {
         ),
       }}
     >
+      {/* Tên kênh trong ô màu nhấn */}
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 12,
           padding: "8px 18px",
           borderRadius: 8,
           backgroundColor: accentColor,
           fontWeight: 800,
-          fontSize: 28,
+          fontSize: 30,
+          letterSpacing: 1,
         }}
       >
-        <div
-          style={{
-            width: 14,
-            height: 14,
-            borderRadius: 7,
-            backgroundColor: colors.text,
-            // Nhấp nháy theo frame (CSS animation không render được trong Remotion).
-            opacity: 0.4 + 0.6 * Math.abs(Math.cos((frame / fps) * Math.PI)),
-          }}
-        />
-        TRỰC TIẾP
-      </div>
-      <div style={{ fontWeight: 800, fontSize: 32, letterSpacing: 2 }}>
         {showName}
       </div>
       <div

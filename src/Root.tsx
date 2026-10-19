@@ -24,7 +24,7 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{
-          showName: "BẢN TIN 60s",
+          showName: "TIN NHANH 1 PHÚT",
           date: "18/10/2026",
           accentColor: "#e11d2e",
           tickerLabel: "TIN NHANH",
@@ -74,7 +74,7 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
         defaultProps={{
-          showName: "BẢN TIN 60s",
+          showName: "TIN NHANH 1 PHÚT",
           date: "18/10/2026",
           accentColor: "#e11d2e",
           category: "Nóng",
@@ -164,7 +164,7 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
           defaultProps={{
-            showName: "BẢN TIN 60s",
+            showName: "TIN NHANH 1 PHÚT",
             date: "18/10/2026",
             accentColor: "#e11d2e",
           }}
@@ -227,7 +227,7 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
           defaultProps={{
-            showName: "BẢN TIN 60s",
+            showName: "TIN NHANH 1 PHÚT",
             callToAction: "Theo dõi để xem bản tin mỗi ngày",
             accentColor: "#e11d2e",
           }}
@@ -242,7 +242,7 @@ export const RemotionRoot: React.FC = () => {
           width={1080}
           height={1920}
           defaultProps={{
-            showName: "BẢN TIN 60s",
+            showName: "TIN NHANH 1 PHÚT",
             date: "18/10/2026",
             accentColor: "#e11d2e",
             style: { backgroundColor: "#0b1220" },
