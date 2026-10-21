@@ -1,0 +1,189 @@
+{
+  "showName": "TIN NHANH 1 PHÚT",
+  "date": "21/10/2026",
+  "accentColor": "#e11d2e",
+  "category": "Pháp luật",
+  "headline": "Chặn ô tô giữa phố Hà Nội, tấn công tài xế",
+  "hookMedia": "media/2026-10-21-chan-o-to-ha-noi/clip-mo-1.jpg",
+  "hookCredit": "Ảnh cắt từ clip, đã làm mờ: Tuổi Trẻ · Tin: VnExpress, Tuổi Trẻ, VTV",
+  "hookTrimBeforeSeconds": 0,
+  "hookFit": "frame",
+  "hookLabel": "ẢNH TỪ CLIP NGƯỜI DÂN QUAY · ĐÃ LÀM MỜ",
+  "hookNarration": "Chặn đầu ô tô giữa phố Hà Nội, tấn công khiến tài xế tử vong. Nghi phạm đã bị bắt chỉ sau vài giờ.",
+  "shots": [
+    {
+      "media": "media/2026-10-21-chan-o-to-ha-noi/hien-truong.jpg",
+      "text": "17h ngày 20/10, gần ngõ 212 Bắc Cầu, phường Bồ Đề",
+      "narration": "Khoảng [17h|mười bảy giờ] chiều [20/10|hai mươi tháng mười], tại khu vực gần ngõ [212|hai trăm mười hai] Bắc Cầu, phường Bồ Đề, Hà Nội, một người đi xe máy đã chặn đầu một chiếc ô tô.",
+      "credit": "Ảnh: Tiền Phong",
+      "durationInSeconds": 7.44,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-21-chan-o-to-ha-noi/vo-1.m4a",
+      "captions": [
+        {
+          "text": "Khoảng 17h chiều 20/10",
+          "startMs": 208,
+          "endMs": 1671,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "tại khu vực gần ngõ 212 Bắc Cầu",
+          "startMs": 1771,
+          "endMs": 3584,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "phường Bồ Đề, Hà Nội",
+          "startMs": 3684,
+          "endMs": 4522,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "một người đi xe máy đã chặn đầu một chiếc ô tô.",
+          "startMs": 4622,
+          "endMs": 6737,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-21-chan-o-to-ha-noi/clip-mo-2.jpg",
+      "text": "Tài xế bị tấn công, tử vong trên ghế lái",
+      "narration": "Người này dùng dao tấn công tài xế nhiều lần qua cửa kính. Nạn nhân tử vong ngay trên ghế lái.",
+      "label": "ẢNH TỪ CLIP NGƯỜI DÂN QUAY · ĐÃ LÀM MỜ",
+      "credit": "Ảnh cắt từ clip, đã làm mờ: Thanh Niên",
+      "durationInSeconds": 4.85,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-21-chan-o-to-ha-noi/vo-2.m4a",
+      "captions": [
+        {
+          "text": "Người này dùng dao tấn công tài xế nhiều lần qua cửa kính.",
+          "startMs": 208,
+          "endMs": 2408,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Nạn nhân tử vong ngay trên ghế lái.",
+          "startMs": 2658,
+          "endMs": 4149,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-21-chan-o-to-ha-noi/hien-truong.jpg",
+      "text": "Nghi phạm bị bắt ngay tối cùng ngày",
+      "narration": "Nghi phạm đội mũ, đeo khẩu trang, rời hiện trường bằng xe máy. Sau vài giờ truy bắt, công an đã bắt giữ người này ngay trong tối cùng ngày.",
+      "credit": "Ảnh: Tiền Phong",
+      "durationInSeconds": 7.1,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "focusY": 0.3,
+      "voice": "media/2026-10-21-chan-o-to-ha-noi/vo-3.m4a",
+      "captions": [
+        {
+          "text": "Nghi phạm đội mũ",
+          "startMs": 208,
+          "endMs": 949,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "đeo khẩu trang, rời hiện trường bằng xe máy.",
+          "startMs": 1049,
+          "endMs": 2782,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Sau vài giờ truy bắt",
+          "startMs": 3032,
+          "endMs": 3977,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "công an đã bắt giữ người này ngay trong tối cùng ngày.",
+          "startMs": 4077,
+          "endMs": 6403,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-21-chan-o-to-ha-noi/clip-mo-1.jpg",
+      "text": "Nguyên nhân đang được điều tra",
+      "narration": "Một người dân cho biết hai bên có mâu thuẫn từ trước. Tuy nhiên, cơ quan chức năng chưa công bố nguyên nhân chính thức.",
+      "label": "ẢNH TỪ CLIP NGƯỜI DÂN QUAY · ĐÃ LÀM MỜ",
+      "credit": "Ảnh cắt từ clip, đã làm mờ: Tuổi Trẻ",
+      "durationInSeconds": 5.37,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "voice": "media/2026-10-21-chan-o-to-ha-noi/vo-4.m4a",
+      "captions": [
+        {
+          "text": "Một người dân cho biết hai bên có mâu thuẫn từ trước.",
+          "startMs": 208,
+          "endMs": 2268,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Tuy nhiên, cơ quan chức năng chưa công bố nguyên nhân chính thức.",
+          "startMs": 2518,
+          "endMs": 4667,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "media": "media/2026-10-21-chan-o-to-ha-noi/hien-truong.jpg",
+      "text": "Có thể bị khởi tố tội giết người (Điều 123 BLHS)",
+      "narration": "Theo luật sư, nếu đủ căn cứ, nghi phạm có thể bị khởi tố về tội giết người theo [Điều 123|điều một trăm hai mươi ba] Bộ luật Hình sự.",
+      "credit": "Ảnh: Tiền Phong",
+      "durationInSeconds": 6.01,
+      "trimBeforeSeconds": 0,
+      "volume": 0,
+      "fit": "frame",
+      "focusY": 0.7,
+      "voice": "media/2026-10-21-chan-o-to-ha-noi/vo-5.m4a",
+      "captions": [
+        {
+          "text": "Theo luật sư, nếu đủ căn cứ",
+          "startMs": 208,
+          "endMs": 1613,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "nghi phạm có thể bị khởi tố về tội giết người theo Điều 123 Bộ luật Hình sự.",
+          "startMs": 1713,
+          "endMs": 5308,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    }
+  ],
+  "voiceover": "",
+  "music": "",
+  "musicVolume": 0,
+  "callToAction": "Theo dõi để cập nhật diễn biến vụ việc",
+  "showSafeZone": false,
+  "hookVoice": "media/2026-10-21-chan-o-to-ha-noi/vo-hook.m4a",
+  "hookDurationInSeconds": 5.43
+}

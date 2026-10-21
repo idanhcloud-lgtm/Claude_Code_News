@@ -70,6 +70,10 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
      vd `"VIDEO TƯ LIỆU · U17 CHÂU Á 5/2026"`, để không gây hiểu nhầm.
    - Video bóng đá: các báo (vd Tuổi Trẻ) thường có MP4 trực tiếp trong thuộc tính `data-vid` của bài; clip có chèn quảng cáo
      và hoạt hình mở/kết, phải soi khung hình để chọn đoạn sạch. YouTube chặn tải từ máy chủ cloud — không lách.
+   - Tin bạo lực/án mạng: **không dùng clip/ảnh cảnh tấn công gây thương vong**. Dùng ảnh hiện trường sau vụ việc;
+     nếu bắt buộc dùng ảnh cắt từ clip thì làm mờ mạnh (`ffmpeg -vf "gblur=sigma=28"`) và gắn `label`
+     "ẢNH TỪ CLIP NGƯỜI DÂN QUAY · ĐÃ LÀM MỜ". Chỉ nêu thông tin đã được báo chính thống xác nhận,
+     không nêu danh tính hay suy đoán động cơ khi cơ quan chức năng chưa công bố.
 7. **Nhạc nền: MẶC ĐỊNH KHÔNG CHÈN** — để `"music": ""` (người dùng tự thêm nhạc trên TikTok khi đăng).
    Chỉ chèn khi người dùng yêu cầu rõ cho video đó; khi đó dùng `musicVolume` ≈ 0.2 nếu có giọng đọc, và
    `python3 scripts/make-tension-music.py <giây> <ra.wav> [bpm] [tension|upbeat]` tự soạn nhạc
