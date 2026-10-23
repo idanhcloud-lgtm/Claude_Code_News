@@ -103,3 +103,18 @@ Cập nhật Remotion + skills: dùng skill `remotion-upgrade` (giữ mọi gói
 
 Cấu hình chất lượng xuất ở `remotion.config.ts`: H.264, CRF 16, preset slow, yuv420p, BT.709, JPEG 95.
 Trên cloud, hook `.claude/hooks/session-start.sh` tự `npm install` và đặt `REMOTION_BROWSER_EXECUTABLE`.
+
+## Phiên bản 2: "Vẽ tay ảnh thời sự" (`VeTayThoiSu`, thư mục `src/v2/`)
+
+Nền giấy, bàn tay cầm bút chì vẽ lại ảnh báo chí thành nét phác thảo, vẽ xong ảnh thật hiện dần lên.
+Code riêng trong `src/v2/` (không sửa TinNong60s); dùng lại font, vùng an toàn, phụ đề, `scripts/make-voiceover.py`.
+
+1. Tìm tin + ảnh như quy trình TinNong60s (bước 1–3). Ảnh hợp nhất: chủ thể rõ, nền gọn (chân dung, nhóm người, toà nhà).
+2. Cài một lần: `.venv-tts/bin/pip install -r scripts/requirements-sketch.txt`.
+3. Tạo nét vẽ cho từng ảnh: `.venv-tts/bin/python scripts/make-sketch.py <ảnh> public/media/<tập>/sketch-<tên>.json [--preview xem.png] [--detail 1.0]`
+   (`--detail` > 1 nhiều chi tiết hơn, < 1 gọn hơn; xem `--preview` để chọn).
+4. Kịch bản `episodes/v2-<ngày>-<chủ-đề>.json` theo `sketchStorySchema` (`src/v2/schema.ts`): `hookImage`/`hookSketch`,
+   mỗi cảnh `image` + `sketch` + `text` + `narration` + `credit` (+ `label` nếu là ảnh tư liệu).
+5. Giọng đọc: `.venv-tts/bin/python scripts/make-voiceover.py episodes/v2-....json` (như bản 1).
+6. Kiểm tra khung hình rồi render: `npx remotion render VeTayThoiSu out/<tên>.mp4 --props=episodes/v2-....json`,
+   sau đó chuẩn hoá âm lượng (bước 10 ở trên). Không chèn nhạc.

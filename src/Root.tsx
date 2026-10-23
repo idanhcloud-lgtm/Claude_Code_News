@@ -10,6 +10,8 @@ import { IntroScene } from "./scenes/IntroScene";
 import { OutroScene } from "./scenes/OutroScene";
 import { StoryScene } from "./scenes/StoryScene";
 import { newsSchema, story60Schema } from "./schema";
+import { calculateSketchMetadata, SketchNewsVideo } from "./v2/SketchNewsVideo";
+import { sketchStorySchema } from "./v2/schema";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -155,6 +157,39 @@ export const RemotionRoot: React.FC = () => {
           showSafeZone: true,
         }}
       />
+      <Folder name="V2-Ve-tay">
+        <Composition
+          id="VeTayThoiSu"
+          component={SketchNewsVideo}
+          schema={sketchStorySchema}
+          calculateMetadata={calculateSketchMetadata}
+          durationInFrames={900}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
+            showName: "TIN NHANH 1 PHÚT",
+            date: "19/10/2026",
+            accentColor: "#e11d2e",
+            category: "Bóng đá",
+            headline: "U17 Việt Nam tới Hàn Quốc",
+            hookImage: "media/2026-10-19-u17-han-quoc/VFF-WM-1-2.jpg",
+            hookSketch: "media/2026-10-19-u17-han-quoc/sketch-VFF-WM-1-2.json",
+            hookCredit: "Ảnh: VFF",
+            shots: [
+              {
+                image: "media/2026-10-19-u17-han-quoc/VFF-WM-127.jpg",
+                sketch: "media/2026-10-19-u17-han-quoc/sketch-VFF-WM-127.json",
+                text: "HLV Cristiano Roland dẫn dắt đội tập huấn",
+                credit: "Ảnh: VFF",
+                durationInSeconds: 6,
+              },
+            ],
+            callToAction: "Theo dõi để cập nhật tin mới",
+            showSafeZone: true,
+          }}
+        />
+      </Folder>
       <Folder name="Scenes">
         <Composition
           id="IntroScene"

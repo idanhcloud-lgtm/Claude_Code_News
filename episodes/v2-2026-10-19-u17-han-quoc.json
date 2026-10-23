@@ -1,0 +1,137 @@
+{
+  "showName": "TIN NHANH 1 PHÚT",
+  "date": "19/10/2026",
+  "accentColor": "#e11d2e",
+  "category": "Bóng đá",
+  "headline": "U17 Việt Nam tới Hàn Quốc",
+  "hookImage": "media/2026-10-19-u17-han-quoc/VFF-WM-1-2.jpg",
+  "hookSketch": "media/2026-10-19-u17-han-quoc/sketch-VFF-WM-1-2.json",
+  "hookCredit": "Ảnh: VFF · Tin: VFF, Thanh Niên",
+  "hookNarration": "U17 Việt Nam đã có mặt tại Hàn Quốc, bắt đầu hành trình hướng tới World Cup!",
+  "shots": [
+    {
+      "image": "media/2026-10-19-u17-han-quoc/VFFM-3.jpg",
+      "sketch": "media/2026-10-19-u17-han-quoc/sketch-VFFM-3.json",
+      "text": "Buổi tập đầu tiên tại Cheonan, Hàn Quốc",
+      "narration": "Chiều [19/10|mười chín tháng mười], các cầu thủ U17 Việt Nam có buổi tập đầu tiên tại thành phố Cheonan. Đây là đợt tập huấn kéo dài [10|mười] ngày.",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 6.46,
+      "voice": "media/v2-2026-10-19-u17-han-quoc/vo-1.m4a",
+      "captions": [
+        {
+          "text": "Chiều 19/10",
+          "startMs": 208,
+          "endMs": 1048,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "các cầu thủ U17 Việt Nam có buổi tập đầu tiên tại thành phố Cheonan.",
+          "startMs": 1148,
+          "endMs": 4018,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Đây là đợt tập huấn kéo dài 10 ngày.",
+          "startMs": 4268,
+          "endMs": 5764,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "image": "media/2026-10-19-u17-han-quoc/VFF-WM-127.jpg",
+      "sketch": "media/2026-10-19-u17-han-quoc/sketch-VFF-WM-127.json",
+      "text": "Thời tiết khoảng 15°C, thuận lợi để tập luyện",
+      "narration": "Thời tiết khoảng [15°C|mười lăm độ C], rất thuận lợi để thầy trò huấn luyện viên Cristiano Roland duy trì cường độ tập luyện.",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 5.35,
+      "voice": "media/v2-2026-10-19-u17-han-quoc/vo-2.m4a",
+      "captions": [
+        {
+          "text": "Thời tiết khoảng 15°C",
+          "startMs": 208,
+          "endMs": 1368,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "rất thuận lợi để thầy trò huấn luyện viên Cristiano Roland duy trì cường độ tập luyện.",
+          "startMs": 1468,
+          "endMs": 4651,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "image": "media/2026-10-19-u17-han-quoc/VFFM-2.jpg",
+      "sketch": "media/2026-10-19-u17-han-quoc/sketch-VFFM-2.json",
+      "text": "3 trận giao hữu, có trận gặp U17 Hàn Quốc 28/10",
+      "narration": "Đội sẽ đá [3|ba] trận giao hữu, trong đó có màn so tài với chủ nhà U17 Hàn Quốc vào ngày [28/10|hai mươi tám tháng mười].",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 5.7,
+      "voice": "media/v2-2026-10-19-u17-han-quoc/vo-3.m4a",
+      "captions": [
+        {
+          "text": "Đội sẽ đá 3 trận giao hữu",
+          "startMs": 208,
+          "endMs": 1506,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "trong đó có màn so tài với chủ nhà U17 Hàn Quốc vào ngày 28/10.",
+          "startMs": 1606,
+          "endMs": 5003,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "image": "media/2026-10-19-u17-han-quoc/IMG_7731.jpg",
+      "sketch": "media/2026-10-19-u17-han-quoc/sketch-IMG_7731.json",
+      "text": "Vòng bảng World Cup: Bỉ, New Zealand, Mali",
+      "narration": "Tại World Cup ở Qatar, U17 Việt Nam lần lượt gặp Bỉ, New Zealand và Mali. Chúc các chàng trai thi đấu thật thành công!",
+      "credit": "Ảnh: VFF",
+      "durationInSeconds": 6.81,
+      "voice": "media/v2-2026-10-19-u17-han-quoc/vo-4.m4a",
+      "captions": [
+        {
+          "text": "Tại World Cup ở Qatar",
+          "startMs": 208,
+          "endMs": 1426,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "U17 Việt Nam lần lượt gặp Bỉ",
+          "startMs": 1526,
+          "endMs": 3076,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "New Zealand và Mali.",
+          "startMs": 3176,
+          "endMs": 4197,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "Chúc các chàng trai thi đấu thật thành công!",
+          "startMs": 4447,
+          "endMs": 6108,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    }
+  ],
+  "callToAction": "Theo dõi để cập nhật tin U17 Việt Nam",
+  "hookVoice": "media/v2-2026-10-19-u17-han-quoc/vo-hook.m4a",
+  "hookDurationInSeconds": 4.13
+}

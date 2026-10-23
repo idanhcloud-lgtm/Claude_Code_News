@@ -1,0 +1,3 @@
+# Chuyển ảnh thời sự thành nét vẽ vector (scripts/make-sketch.py).
+opencv-python-headless==4.12.0.88
+numpy
