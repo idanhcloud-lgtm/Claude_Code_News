@@ -5,6 +5,14 @@ Dự án tạo video tin tức **dọc 9:16 (1080×1920, 30fps)** cho TikTok / R
 **Tên kênh: "TIN NHANH 1 PHÚT"**: luôn đặt `showName` = `"TIN NHANH 1 PHÚT"`. Thanh trên chỉ hiện tên kênh + ngày;
 không dùng các chữ "TIN NÓNG", "TRỰC TIẾP" trong layout.
 
+## Phiên bản đã chốt: `TinNong60s` (tag git `tinnong60s-v1`)
+
+Mẫu `TinNong60s` đã hoàn chỉnh và được **giữ nguyên**. Không sửa `src/NewsStory60.tsx` và các file nó dùng
+(`src/scenes/HookScene.tsx`, `ShotScene.tsx`, `OutroScene.tsx`, `src/elements/*`, `src/schema.ts` phần `story60Schema`)
+theo cách làm thay đổi hình ảnh/âm thanh của nó. Phiên bản mới làm thành **composition và file riêng**
+(vd `src/v2/...`, id composition khác); cần thay đổi component dùng chung thì **sao chép** sang thư mục mới rồi sửa.
+Lấy lại đúng bản đã chốt: `git checkout tinnong60s-v1`.
+
 ## Skills Remotion
 
 Bộ skill chính thức của Remotion nằm trong `.claude/skills/` (khoá phiên bản trong `skills-lock.json`).
