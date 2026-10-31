@@ -30,8 +30,20 @@ MARKUP = re.compile(r"\[([^|\]]+)\|([^\]]+)\]")
 
 
 def split_chunks(narration):
-    """Tách lời đọc thành các cụm theo dấu câu; gộp cụm quá ngắn (< 4 từ)."""
-    parts = re.findall(r"[^,.;:!?]+[,.;:!?]*", narration)
+    """Tách lời đọc thành các cụm theo dấu câu; gộp cụm quá ngắn (< 4 từ).
+
+    Chỉ tách ở dấu câu đứng trước khoảng trắng hoặc cuối câu, và không tách bên trong [hiển thị|đọc],
+    để "3.400", "TP.HCM", "15–20 km/h" không bị cắt đôi.
+    """
+    protected = []
+
+    def hide(m):
+        protected.append(m.group(0))
+        return f"\x00{len(protected) - 1}\x00"
+
+    text = MARKUP.sub(hide, narration)
+    parts = re.split(r"(?<=[,.;:!?])\s+", text)
+    parts = [re.sub(r"\x00(\d+)\x00", lambda m: protected[int(m.group(1))], p) for p in parts]
     chunks = []
     for p in (x.strip() for x in parts):
         if not p:
@@ -41,6 +53,29 @@ def split_chunks(narration):
         else:
             chunks.append(p)
     return chunks
+
+
+MAX_CAPTION_CHARS = 55
+
+
+def split_caption(text):
+    """Chia phụ đề dài thành các đoạn ≤ ~55 ký tự, cắt ở ranh giới từ."""
+    if len(text) <= MAX_CAPTION_CHARS:
+        return [text]
+    n = -(-len(text) // MAX_CAPTION_CHARS)
+    words = text.split()
+    target = len(text) / n
+    out, cur = [], ""
+    for w in words:
+        # Không ngắt ngay sau con số để số và đơn vị ("124 km", "3.400 tấn") đi cùng dòng.
+        after_number = bool(cur) and any(ch.isdigit() for ch in cur.split()[-1])
+        if cur and not after_number and len(cur) + 1 + len(w) > target and len(out) < n - 1:
+            out.append(cur)
+            cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    out.append(cur)
+    return out
 
 
 def trim_silence(audio, threshold=0.01):
@@ -62,15 +97,22 @@ def synth(tts, voice, narration):
         shown = MARKUP.sub(r"\1", chunk).rstrip(",;:")
         audio = trim_silence(np.asarray(tts.infer(spoken, voice=voice), dtype=np.float32))
         dur = len(audio) / SR
-        captions.append(
-            {
-                "text": shown,
-                "startMs": round(t * 1000),
-                "endMs": round((t + dur) * 1000),
-                "timestampMs": None,
-                "confidence": None,
-            }
-        )
+        # Cụm dài thì chia phụ đề thành nhiều dòng nối tiếp, thời gian chia theo số ký tự.
+        lines = split_caption(shown)
+        total_chars = sum(len(x) for x in lines)
+        start = t
+        for line in lines:
+            line_dur = dur * len(line) / total_chars
+            captions.append(
+                {
+                    "text": line,
+                    "startMs": round(start * 1000),
+                    "endMs": round((start + line_dur) * 1000),
+                    "timestampMs": None,
+                    "confidence": None,
+                }
+            )
+            start += line_dur
         gap = GAP_SENTENCE if chunk.rstrip()[-1:] in ".!?" else GAP_COMMA
         pieces += [audio, np.zeros(int(gap * SR), dtype=np.float32)]
         t += dur + gap

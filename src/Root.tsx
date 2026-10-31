@@ -12,6 +12,11 @@ import { StoryScene } from "./scenes/StoryScene";
 import { newsSchema, story60Schema } from "./schema";
 import { calculateSketchMetadata, SketchNewsVideo } from "./v2/SketchNewsVideo";
 import { sketchStorySchema } from "./v2/schema";
+import {
+  calculateExplainerMetadata,
+  ExplainerVideo,
+} from "./v3/ExplainerVideo";
+import { explainerSchema } from "./v3/schema";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -186,6 +191,49 @@ export const RemotionRoot: React.FC = () => {
               },
             ],
             callToAction: "Theo dõi để cập nhật tin mới",
+            showSafeZone: true,
+          }}
+        />
+      </Folder>
+      <Folder name="V3-Explainer-ban-do">
+        <Composition
+          id="ExplainerBanDo"
+          component={ExplainerVideo}
+          schema={explainerSchema}
+          calculateMetadata={calculateExplainerMetadata}
+          durationInFrames={900}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
+            showName: "TIN NHANH 1 PHÚT",
+            date: "31/10/2026",
+            accentColor: "#e11d2e",
+            credit: "Bản đồ: Natural Earth",
+            shots: [
+              {
+                durationInSeconds: 4,
+                camera: { lon: 106, lat: 14, zoom: 5.6 },
+                highlight: ["VNM"],
+                overlay: {
+                  type: "title",
+                  kicker: "Explainer",
+                  title: "Tiêu đề chủ đề",
+                },
+              },
+              {
+                durationInSeconds: 4,
+                camera: { lon: 106.7, lat: 10.78, zoom: 10 },
+                markers: [{ lon: 106.7, lat: 10.78, label: "TP.HCM" }],
+                overlay: {
+                  type: "counter",
+                  value: 3400,
+                  suffix: "tấn",
+                  label: "Ví dụ số liệu",
+                },
+              },
+            ],
+            callToAction: "Theo dõi để xem thêm",
             showSafeZone: true,
           }}
         />

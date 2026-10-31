@@ -1,0 +1,515 @@
+{
+  "showName": "TIN NHANH 1 PHÚT",
+  "date": "31/10/2026",
+  "accentColor": "#e11d2e",
+  "credit": "Nguồn: VnExpress, Tiền Phong · Bản đồ: Natural Earth",
+  "routeNote": "SƠ ĐỒ MINH HOẠ",
+  "route": [
+    [
+      107.095,
+      10.4
+    ],
+    [
+      107.05,
+      10.385
+    ],
+    [
+      106.97,
+      10.37
+    ],
+    [
+      106.88,
+      10.385
+    ],
+    [
+      106.8,
+      10.42
+    ],
+    [
+      106.79,
+      10.47
+    ],
+    [
+      106.778,
+      10.54
+    ],
+    [
+      106.772,
+      10.6
+    ],
+    [
+      106.768,
+      10.662
+    ],
+    [
+      106.75,
+      10.698
+    ],
+    [
+      106.746,
+      10.73
+    ],
+    [
+      106.748,
+      10.743
+    ],
+    [
+      106.758,
+      10.757
+    ],
+    [
+      106.758,
+      10.768
+    ],
+    [
+      106.748,
+      10.776
+    ],
+    [
+      106.733,
+      10.771
+    ],
+    [
+      106.719,
+      10.762
+    ],
+    [
+      106.709,
+      10.761
+    ],
+    [
+      106.7065,
+      10.768
+    ],
+    [
+      106.7065,
+      10.7745
+    ]
+  ],
+  "shots": [
+    {
+      "durationInSeconds": 7.29,
+      "camera": {
+        "lon": 106.3,
+        "lat": 13.6,
+        "zoom": 5.4
+      },
+      "highlight": [
+        "VNM"
+      ],
+      "overlay": {
+        "type": "title",
+        "kicker": "TP.HCM",
+        "title": "Hành trình 124 km của chiếc lá dừa thép"
+      },
+      "narration": "Một chiếc lá dừa bằng thép nặng [3.400 tấn|ba nghìn bốn trăm tấn] đã vượt [124 km|một trăm hai mươi bốn ki lô mét] đường biển và đường sông để về tới trung tâm [TP.HCM|thành phố Hồ Chí Minh].",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-1.m4a",
+      "captions": [
+        {
+          "text": "Một chiếc lá dừa bằng thép nặng 3.400 tấn đã vượt 124 km",
+          "startMs": 208,
+          "endMs": 3515,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "đường biển và đường sông để về tới trung tâm TP.HCM.",
+          "startMs": 3515,
+          "endMs": 6586,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 6.18,
+      "camera": {
+        "lon": 106.9,
+        "lat": 10.58,
+        "zoom": 9.2
+      },
+      "markers": [
+        {
+          "lon": 107.08,
+          "lat": 10.35,
+          "label": "Vũng Tàu"
+        },
+        {
+          "lon": 106.7,
+          "lat": 10.78,
+          "label": "TP.HCM"
+        }
+      ],
+      "overlay": {
+        "type": "counter",
+        "value": 187,
+        "suffix": "m",
+        "label": "Chiều dài nhịp chính"
+      },
+      "narration": "Đó là nhịp chính dài [187 m|một trăm tám mươi bảy mét] của cầu đi bộ qua sông Sài Gòn, cây cầu đi bộ đầu tiên bắc qua dòng sông này.",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-2.m4a",
+      "captions": [
+        {
+          "text": "Đó là nhịp chính dài 187 m",
+          "startMs": 208,
+          "endMs": 1776,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "của cầu đi bộ qua sông Sài Gòn",
+          "startMs": 1776,
+          "endMs": 3585,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "cây cầu đi bộ đầu tiên bắc qua dòng sông này.",
+          "startMs": 3685,
+          "endMs": 5484,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 5.63,
+      "camera": {
+        "lon": 106.9,
+        "lat": 10.58,
+        "zoom": 9.4
+      },
+      "markers": [
+        {
+          "lon": 107.08,
+          "lat": 10.35,
+          "label": "Vũng Tàu"
+        },
+        {
+          "lon": 106.7,
+          "lat": 10.78,
+          "label": "TP.HCM"
+        }
+      ],
+      "overlay": {
+        "type": "bars",
+        "title": "Tổng 3.400 tấn",
+        "unit": "tấn",
+        "items": [
+          {
+            "label": "Vòm thép",
+            "value": 1400,
+            "highlight": true
+          },
+          {
+            "label": "Khung đỡ chuyên dụng",
+            "value": 2000
+          }
+        ]
+      },
+      "narration": "Tổ hợp gồm vòm thép [1.400 tấn|một nghìn bốn trăm tấn] và hệ khung đỡ [2.000 tấn|hai nghìn tấn], đặt trên sà lan dài [109 m|một trăm lẻ chín mét].",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-3.m4a",
+      "captions": [
+        {
+          "text": "Tổ hợp gồm vòm thép 1.400 tấn và hệ khung đỡ 2.000 tấn",
+          "startMs": 208,
+          "endMs": 3181,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "đặt trên sà lan dài 109 m.",
+          "startMs": 3281,
+          "endMs": 4934,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 6.51,
+      "camera": {
+        "lon": 106.95,
+        "lat": 10.42,
+        "zoom": 10.3
+      },
+      "markers": [
+        {
+          "lon": 107.095,
+          "lat": 10.4,
+          "label": "Cảng Đông Xuyên"
+        },
+        {
+          "lon": 106.79,
+          "lat": 10.47,
+          "label": "Cần Giờ",
+          "kind": "minor"
+        }
+      ],
+      "routeProgress": [
+        0,
+        0.485
+      ],
+      "overlay": {
+        "type": "calendar",
+        "day": 18,
+        "month": "Tháng 10",
+        "year": "2026",
+        "label": "Rời Vũng Tàu"
+      },
+      "narration": "Lúc [5h20|năm giờ hai mươi] ngày [18/10|mười tám tháng mười], đoàn lai dắt rời cảng Đông Xuyên ở Vũng Tàu, đi hơn [80 km|tám mươi ki lô mét] tới Cần Giờ rồi neo qua đêm.",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-4.m4a",
+      "captions": [
+        {
+          "text": "Lúc 5h20 ngày 18/10",
+          "startMs": 208,
+          "endMs": 1677,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "đoàn lai dắt rời cảng Đông Xuyên ở Vũng Tàu",
+          "startMs": 1777,
+          "endMs": 3554,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "đi hơn 80 km tới Cần Giờ rồi neo qua đêm.",
+          "startMs": 3654,
+          "endMs": 5812,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 6.25,
+      "camera": {
+        "lon": 106.86,
+        "lat": 10.46,
+        "zoom": 10.6
+      },
+      "markers": [
+        {
+          "lon": 106.79,
+          "lat": 10.47,
+          "label": "Cần Giờ"
+        }
+      ],
+      "overlay": {
+        "type": "facts",
+        "title": "Đoàn lai dắt",
+        "items": [
+          {
+            "label": "1 tàu kéo chính 5.000 mã lực"
+          },
+          {
+            "label": "2 tàu áp mạn"
+          },
+          {
+            "label": "1 tàu dự phòng"
+          },
+          {
+            "label": "Tốc độ 15–20 km/h"
+          }
+        ]
+      },
+      "narration": "Đoàn gồm một tàu kéo chính [5.000|năm nghìn] mã lực, hai tàu áp mạn và một tàu dự phòng, chỉ chạy [15 đến 20 km/h|mười lăm đến hai mươi ki lô mét một giờ].",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-5.m4a",
+      "captions": [
+        {
+          "text": "Đoàn gồm một tàu kéo chính 5.000 mã lực",
+          "startMs": 208,
+          "endMs": 1883,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "hai tàu áp mạn và một tàu dự phòng",
+          "startMs": 1983,
+          "endMs": 3514,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "chỉ chạy 15 đến 20 km/h.",
+          "startMs": 3614,
+          "endMs": 5548,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 8.22,
+      "camera": {
+        "lon": 106.77,
+        "lat": 10.63,
+        "zoom": 9.9
+      },
+      "markers": [
+        {
+          "lon": 106.768,
+          "lat": 10.662,
+          "label": "Cầu Bình Khánh",
+          "kind": "minor"
+        },
+        {
+          "lon": 106.7065,
+          "lat": 10.7745,
+          "label": "Bến Bạch Đằng"
+        }
+      ],
+      "routeProgress": [
+        0.485,
+        1
+      ],
+      "overlay": {
+        "type": "timeline",
+        "title": "Ngày 19/10",
+        "items": [
+          {
+            "label": "5h|Rời Cần Giờ"
+          },
+          {
+            "label": "Gần 7h|Qua cầu Bình Khánh"
+          },
+          {
+            "label": "Hơn 10h|Qua cầu Phú Mỹ"
+          },
+          {
+            "label": "15h|Cập Bến Bạch Đằng"
+          }
+        ]
+      },
+      "narration": "Sáng [19/10|mười chín tháng mười], đoàn đi tiếp gần [40 km|bốn mươi ki lô mét] qua sông Soài Rạp và sông Sài Gòn, qua cầu Bình Khánh, cầu Phú Mỹ, rồi cập Bến Bạch Đằng lúc [15h|mười lăm giờ].",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-6.m4a",
+      "captions": [
+        {
+          "text": "Sáng 19/10",
+          "startMs": 208,
+          "endMs": 1139,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "đoàn đi tiếp gần 40 km qua",
+          "startMs": 1239,
+          "endMs": 2710,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "sông Soài Rạp và sông Sài Gòn",
+          "startMs": 2710,
+          "endMs": 4351,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "qua cầu Bình Khánh",
+          "startMs": 4451,
+          "endMs": 5261,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "cầu Phú Mỹ, rồi cập Bến Bạch Đằng lúc 15h.",
+          "startMs": 5361,
+          "endMs": 7522,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 5.77,
+      "camera": {
+        "lon": 106.709,
+        "lat": 10.772,
+        "zoom": 12.3
+      },
+      "markers": [
+        {
+          "lon": 106.7065,
+          "lat": 10.7745,
+          "label": "Bến Bạch Đằng"
+        }
+      ],
+      "overlay": {
+        "type": "calendar",
+        "day": 21,
+        "month": "Tháng 10",
+        "year": "2026",
+        "label": "Hợp long"
+      },
+      "narration": "Ngày [21/10|hai mươi mốt tháng mười], nhịp cầu được đưa vào vị trí và hợp long, nối Bến Bạch Đằng với khu đô thị Thủ Thiêm.",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-7.m4a",
+      "captions": [
+        {
+          "text": "Ngày 21/10",
+          "startMs": 208,
+          "endMs": 1232,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "nhịp cầu được đưa vào vị trí và hợp long",
+          "startMs": 1332,
+          "endMs": 3079,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "nối Bến Bạch Đằng với khu đô thị Thủ Thiêm.",
+          "startMs": 3179,
+          "endMs": 5072,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "durationInSeconds": 4.71,
+      "camera": {
+        "lon": 106.709,
+        "lat": 10.772,
+        "zoom": 11.9
+      },
+      "markers": [
+        {
+          "lon": 106.7065,
+          "lat": 10.7745,
+          "label": "Cầu đi bộ"
+        }
+      ],
+      "overlay": {
+        "type": "counter",
+        "kicker": "Gần",
+        "value": 1000,
+        "suffix": "tỷ đồng",
+        "label": "Tổng vốn đầu tư"
+      },
+      "narration": "Cầu dài khoảng [720 m|bảy trăm hai mươi mét], tổng vốn gần [1.000 tỷ đồng|một nghìn tỷ đồng] do Nutifood tài trợ.",
+      "voice": "media/v3-2026-10-31-la-dua-thep/vo-8.m4a",
+      "captions": [
+        {
+          "text": "Cầu dài khoảng 720 m",
+          "startMs": 208,
+          "endMs": 1655,
+          "timestampMs": null,
+          "confidence": null
+        },
+        {
+          "text": "tổng vốn gần 1.000 tỷ đồng do Nutifood tài trợ.",
+          "startMs": 1755,
+          "endMs": 4014,
+          "timestampMs": null,
+          "confidence": null
+        }
+      ]
+    }
+  ],
+  "callToAction": "Theo dõi để xem thêm explainer"
+}

@@ -118,3 +118,20 @@ Code riêng trong `src/v2/` (không sửa TinNong60s); dùng lại font, vùng a
 5. Giọng đọc: `.venv-tts/bin/python scripts/make-voiceover.py episodes/v2-....json` (như bản 1).
 6. Kiểm tra khung hình rồi render: `npx remotion render VeTayThoiSu out/<tên>.mp4 --props=episodes/v2-....json`,
    sau đó chuẩn hoá âm lượng (bước 10 ở trên). Không chèn nhạc.
+
+## Phiên bản 3: "Explainer bản đồ + số liệu" (`ExplainerBanDo`, thư mục `src/v3/`)
+
+Nền xanh đêm, bản đồ vector tự vẽ (Natural Earth, public domain) chạy xuyên suốt: máy quay bay/zoom giữa các cảnh,
+tô đỏ quốc gia, chấm + nhãn địa điểm, lộ trình vàng vẽ dần. Trên bản đồ là đồ hoạ số liệu theo từng cảnh:
+`title`, `counter` (số đếm lên), `calendar` (tờ lịch), `bars` (biểu đồ cột), `timeline` (mốc giờ, item dạng `"giờ|sự kiện"`),
+`facts` (thẻ thông tin). Không dùng ảnh/video — hợp tin hạ tầng, kinh tế, quốc tế, hành trình.
+
+1. Kịch bản `episodes/v3-<ngày>-<chủ-đề>.json` theo `explainerSchema` (`src/v3/schema.ts`). Mỗi cảnh: `camera`
+   (`lon`, `lat`, `zoom`: 5–6 cả Việt Nam, 9–10 cấp tỉnh, 12 cấp quận), tuỳ chọn `highlight` (mã ISO3, vd `"VNM"`
+   — chỉ dùng khi zoom ≤ 7), `markers`, `routeProgress` [từ, tới], `overlay`, `narration`.
+   Lộ trình `route` là toạ độ ước lượng → luôn đặt `routeNote: "SƠ ĐỒ MINH HOẠ"`.
+   Hai chấm gần nhau dưới ~0,03° ở zoom ≥ 10 sẽ chồng nhãn — chỉ giữ một.
+2. Giọng đọc + phụ đề: `scripts/make-voiceover.py` như các bản khác (cảnh đầu đóng vai hook, không cần `hookNarration`).
+3. Vùng bản đồ khác: `python3 scripts/make-map-data.py <ne_50m.geojson> <ne_10m.geojson> src/v3/data/<tên>.json --bbox w,s,e,n --detail VNM`
+   (tải GeoJSON từ github.com/nvkelso/natural-earth-vector), rồi đổi file import trong `src/v3/MapLayer.tsx`.
+4. Kiểm tra khung hình, render `npx remotion render ExplainerBanDo out/<tên>.mp4 --props=<file>`, chuẩn hoá âm lượng. Không chèn nhạc.
