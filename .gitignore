@@ -14,3 +14,5 @@ public/media/
 
 # Môi trường Python cho giọng đọc (scripts/requirements-tts.txt)
 .venv-tts/
+
+__pycache__/
