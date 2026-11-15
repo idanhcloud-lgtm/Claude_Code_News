@@ -11,16 +11,14 @@ import {
 } from "remotion";
 import { Captions } from "../elements/Captions";
 import { ProgressBar } from "../elements/ProgressBar";
-import { TopBar } from "../elements/TopBar";
 import { ENGINE_CAPTIONS } from "./captions";
 import { GearIndicator, PistonCylinder, Tachometer } from "./Instruments";
 import { blueprint, fontFamily, SAFE, STAGE } from "./theme";
 import { Dohc3D, Pistons3D, Sohc3D } from "./Engine3D";
 import { ValveTrain } from "./ValveTrain";
 
+// Video này không thuộc kênh "TIN NHANH 1 PHÚT": không có thanh tên kênh và ngày.
 export type EngineVideoProps = {
-  readonly showName: string;
-  readonly date: string;
   readonly audio: string;
   // true: 3 cảnh cơ khí (1 trục cam, 2 trục cam, piston) dựng bằng mô hình 3D.
   readonly mode3d?: boolean;
@@ -447,12 +445,7 @@ const SCENES: [number, number, (is3d: boolean) => React.ReactNode][] = [
   [39.0, 42.7, () => <Cta />],
 ];
 
-export const EngineVideo = ({
-  showName,
-  date,
-  audio,
-  mode3d,
-}: EngineVideoProps) => {
+export const EngineVideo = ({ audio, mode3d }: EngineVideoProps) => {
   const { fps } = useVideoConfig();
   return (
     <AbsoluteFill style={{ backgroundColor: blueprint.bg }}>
@@ -473,12 +466,6 @@ export const EngineVideo = ({
           {render(mode3d ?? false)}
         </Sequence>
       ))}
-      <TopBar
-        name="Thanh tên kênh"
-        showName={showName}
-        date={date}
-        accentColor={blueprint.winner}
-      />
       <ProgressBar name="Tiến độ" accentColor={blueprint.yellow} />
       <div
         style={{
