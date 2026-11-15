@@ -253,6 +253,20 @@ export const RemotionRoot: React.FC = () => {
             audio: "media/2026-11-15-exciter-winner/giong-doc.mp3",
           }}
         />
+        <Composition
+          id="SoSanhDongCo3D"
+          component={EngineVideo}
+          durationInFrames={1281}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
+            showName: "TIN NHANH 1 PHÚT",
+            date: "15/11/2026",
+            audio: "media/2026-11-15-exciter-winner/giong-doc.mp3",
+            mode3d: true,
+          }}
+        />
       </Folder>
       <Folder name="Scenes">
         <Composition

@@ -15,13 +15,18 @@ import { TopBar } from "../elements/TopBar";
 import { ENGINE_CAPTIONS } from "./captions";
 import { GearIndicator, PistonCylinder, Tachometer } from "./Instruments";
 import { blueprint, fontFamily, SAFE, STAGE } from "./theme";
+import { Dohc3D, Pistons3D, Sohc3D } from "./Engine3D";
 import { ValveTrain } from "./ValveTrain";
 
 export type EngineVideoProps = {
   readonly showName: string;
   readonly date: string;
   readonly audio: string;
+  // true: 3 cảnh cơ khí (1 trục cam, 2 trục cam, piston) dựng bằng mô hình 3D.
+  readonly mode3d?: boolean;
 };
+
+const STAGE_W = 856;
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ease = Easing.bezier(0.16, 1, 0.3, 1);
@@ -146,23 +151,37 @@ const Hook = () => {
   );
 };
 
-const Sohc = () => (
+const Sohc = ({ is3d }: { readonly is3d: boolean }) => (
   <Scene>
     <Chip text="Exciter · 1 trục cam" color={blueprint.exciter} />
-    <Note text="Đầu máy nhìn mặt cắt · 4 xupáp (hình vẽ 1 cặp)" />
-    <div style={{ scale: 0.95 }}>
-      <ValveTrain mode="sohc" color={blueprint.exciter} />
-    </div>
+    <Note
+      text={
+        is3d
+          ? "Mô hình minh hoạ · cò mổ màu vàng"
+          : "Đầu máy nhìn mặt cắt · 4 xupáp (hình vẽ 1 cặp)"
+      }
+    />
+    {is3d ? (
+      <Sohc3D color={blueprint.exciter} width={STAGE_W} height={700} />
+    ) : (
+      <div style={{ scale: 0.95 }}>
+        <ValveTrain mode="sohc" color={blueprint.exciter} />
+      </div>
+    )}
   </Scene>
 );
 
-const Dohc = () => (
+const Dohc = ({ is3d }: { readonly is3d: boolean }) => (
   <Scene>
     <Chip text="Winner X · 2 trục cam" color={blueprint.winner} />
     <Note text="Mỗi trục cam lo riêng 1 cặp xupáp" />
-    <div style={{ scale: 0.95 }}>
-      <ValveTrain mode="dohc" color={blueprint.winner} />
-    </div>
+    {is3d ? (
+      <Dohc3D color={blueprint.winner} width={STAGE_W} height={700} />
+    ) : (
+      <div style={{ scale: 0.95 }}>
+        <ValveTrain mode="dohc" color={blueprint.winner} />
+      </div>
+    )}
   </Scene>
 );
 
@@ -196,7 +215,7 @@ const Gauges = () => {
   );
 };
 
-const Pistons = () => {
+const Pistons = ({ is3d }: { readonly is3d: boolean }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const torque = interpolate(frame, [1.9 * fps, 3.2 * fps], [0, 1], {
@@ -228,14 +247,37 @@ const Pistons = () => {
   return (
     <Scene>
       <Chip text="Hành trình piston (minh hoạ)" color="#2a3a55" />
-      <div style={{ display: "flex", gap: 80, marginTop: -40 }}>
-        <PistonCylinder
-          color={blueprint.exciter}
-          name="EXCITER 150"
-          crankR={78}
-        />
-        <PistonCylinder color={blueprint.winner} name="WINNER X" crankR={66} />
-      </div>
+      {is3d ? (
+        <div style={{ position: "relative" }}>
+          <Pistons3D width={STAGE_W} height={600} />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 10,
+              left: 0,
+              right: 0,
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            <Chip text="Exciter 150" color={blueprint.exciter} />
+            <Chip text="Winner X" color={blueprint.winner} />
+          </div>
+        </div>
+      ) : (
+        <div style={{ display: "flex", gap: 80, marginTop: -40 }}>
+          <PistonCylinder
+            color={blueprint.exciter}
+            name="EXCITER 150"
+            crankR={78}
+          />
+          <PistonCylinder
+            color={blueprint.winner}
+            name="WINNER X"
+            crankR={66}
+          />
+        </div>
+      )}
       <div style={{ display: "flex", gap: 120, opacity: torque }}>
         {bar(13.8, blueprint.exciter)}
         {bar(13.5, blueprint.winner)}
@@ -394,18 +436,23 @@ const Cta = () => {
 };
 
 // Mốc cảnh theo giọng đọc (giây).
-const SCENES: [number, number, () => React.ReactNode][] = [
+const SCENES: [number, number, (is3d: boolean) => React.ReactNode][] = [
   [0, 5.5, () => <Hook />],
-  [5.5, 10.1, () => <Sohc />],
-  [10.1, 14.0, () => <Dohc />],
+  [5.5, 10.1, (is3d) => <Sohc is3d={is3d} />],
+  [10.1, 14.0, (is3d) => <Dohc is3d={is3d} />],
   [14.0, 23.4, () => <Gauges />],
-  [23.4, 28.4, () => <Pistons />],
+  [23.4, 28.4, (is3d) => <Pistons is3d={is3d} />],
   [28.4, 35.3, () => <Gears />],
   [35.3, 39.0, () => <Summary />],
   [39.0, 42.7, () => <Cta />],
 ];
 
-export const EngineVideo = ({ showName, date, audio }: EngineVideoProps) => {
+export const EngineVideo = ({
+  showName,
+  date,
+  audio,
+  mode3d,
+}: EngineVideoProps) => {
   const { fps } = useVideoConfig();
   return (
     <AbsoluteFill style={{ backgroundColor: blueprint.bg }}>
@@ -423,7 +470,7 @@ export const EngineVideo = ({ showName, date, audio }: EngineVideoProps) => {
           from={Math.round(from * fps)}
           durationInFrames={Math.round((to - from) * fps)}
         >
-          {render()}
+          {render(mode3d ?? false)}
         </Sequence>
       ))}
       <TopBar
