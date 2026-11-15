@@ -143,7 +143,10 @@ Video so sánh/giải thích kỹ thuật dùng **giọng của người dùng**
 Chỉ làm bản **3D** (người dùng không cần bản 2D).
 1. Chép lời + mốc thời gian từng chữ bằng faster-whisper (`large-v3-turbo`, `language="vi"`, `word_timestamps=True`);
    đổi âm thanh sang WAV 16 kHz bằng ffmpeg rồi đưa mảng numpy vào (đọc mp3 trực tiếp bị lỗi phiên bản PyAV).
-2. Viết phụ đề đã sửa chính tả vào `src/v4/captions.ts`, đặt mốc cảnh trong `SCENES` (`src/v4/EngineVideo.tsx`) theo lời.
-3. Cảnh cơ khí dựng 3D bằng `@remotion/three` (`Engine3D.tsx`); đồng hồ, đèn báo số vẽ SVG (`Instruments.tsx`):
-   mọi chuyển động tính từ `useCurrentFrame()`, cấm `useFrame()`. Render 3D trên cloud (không GPU) thêm `--gl=swangle`.
+2. Sinh `src/v4/words.ts` (từng chữ + thời gian, đã sửa chính tả, gộp số "13" ".8" → "13,8"), chia cụm bằng `pageBreakAfter`;
+   đặt mốc cảnh/nhãn trong `RIG` và `overlays` (`src/v4/EngineVideo.tsx`) theo lời.
+3. Phong cách studio sáng (trời + sàn, bóng đổ) giống video mẫu: khối máy 3D cắt đôi, tháp bánh răng (`Studio3D.tsx`),
+   một máy quay liên tục theo mốc `RIG` (`EngineVideo.tsx`), nhãn viên thuốc 2D, phụ đề karaoke từng chữ (`Karaoke.tsx`, `words.ts`).
+   Mọi chuyển động tính từ `useCurrentFrame()`, cấm `useFrame()`. Render 3D trên cloud (không GPU) thêm `--gl=swangle`.
+   Ảnh xe tách nền bằng rembg (`isnet-general-use`) rồi đặt lên phông studio.
 4. Hình minh hoạ cơ khí là sơ đồ đơn giản hoá → ghi "minh hoạ" khi có phóng đại (vd hành trình piston).

@@ -249,6 +249,8 @@ export const RemotionRoot: React.FC = () => {
           height={1920}
           defaultProps={{
             audio: "media/2026-11-15-exciter-winner/giong-doc.mp3",
+            exciterImage: "media/2026-11-15-exciter-winner/exciter-150.png",
+            winnerImage: "media/2026-11-15-exciter-winner/winner-x.png",
           }}
         />
       </Folder>
