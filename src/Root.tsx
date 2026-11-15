@@ -241,17 +241,6 @@ export const RemotionRoot: React.FC = () => {
       </Folder>
       <Folder name="V4-Mo-phong">
         <Composition
-          id="SoSanhDongCo"
-          component={EngineVideo}
-          durationInFrames={1281}
-          fps={30}
-          width={1080}
-          height={1920}
-          defaultProps={{
-            audio: "media/2026-11-15-exciter-winner/giong-doc.mp3",
-          }}
-        />
-        <Composition
           id="SoSanhDongCo3D"
           component={EngineVideo}
           durationInFrames={1281}
@@ -260,7 +249,6 @@ export const RemotionRoot: React.FC = () => {
           height={1920}
           defaultProps={{
             audio: "media/2026-11-15-exciter-winner/giong-doc.mp3",
-            mode3d: true,
           }}
         />
       </Folder>

@@ -136,13 +136,14 @@ tô đỏ quốc gia, chấm + nhãn địa điểm, lộ trình vàng vẽ dầ
    (tải GeoJSON từ github.com/nvkelso/natural-earth-vector), rồi đổi file import trong `src/v3/MapLayer.tsx`.
 4. Kiểm tra khung hình, render `npx remotion render ExplainerBanDo out/<tên>.mp4 --props=<file>`, chuẩn hoá âm lượng. Không chèn nhạc.
 
-## Phiên bản 4: "Mô phỏng cơ khí" (`SoSanhDongCo` 2D, `SoSanhDongCo3D` 3D, thư mục `src/v4/`)
+## Phiên bản 4: "Mô phỏng cơ khí 3D" (`SoSanhDongCo3D`, thư mục `src/v4/`)
 
 Video so sánh/giải thích kỹ thuật dùng **giọng của người dùng** (file âm thanh họ gửi), không dùng TTS.
-**Không thuộc kênh "TIN NHANH 1 PHÚT"** → không có thanh tên kênh và ngày (ngoại lệ của quy tắc tên kênh ở đầu file).
+**Không thuộc kênh "TIN NHANH 1 PHÚT"** → không có thanh tên kênh, ngày, hay thanh tiến độ (ngoại lệ của quy tắc tên kênh ở đầu file).
+Chỉ làm bản **3D** (người dùng không cần bản 2D).
 1. Chép lời + mốc thời gian từng chữ bằng faster-whisper (`large-v3-turbo`, `language="vi"`, `word_timestamps=True`);
    đổi âm thanh sang WAV 16 kHz bằng ffmpeg rồi đưa mảng numpy vào (đọc mp3 trực tiếp bị lỗi phiên bản PyAV).
 2. Viết phụ đề đã sửa chính tả vào `src/v4/captions.ts`, đặt mốc cảnh trong `SCENES` (`src/v4/EngineVideo.tsx`) theo lời.
-3. Mô phỏng 2D vẽ SVG (`ValveTrain.tsx`, `Instruments.tsx`); bản 3D dùng `@remotion/three` (`Engine3D.tsx`):
+3. Cảnh cơ khí dựng 3D bằng `@remotion/three` (`Engine3D.tsx`); đồng hồ, đèn báo số vẽ SVG (`Instruments.tsx`):
    mọi chuyển động tính từ `useCurrentFrame()`, cấm `useFrame()`. Render 3D trên cloud (không GPU) thêm `--gl=swangle`.
 4. Hình minh hoạ cơ khí là sơ đồ đơn giản hoá → ghi "minh hoạ" khi có phóng đại (vd hành trình piston).
