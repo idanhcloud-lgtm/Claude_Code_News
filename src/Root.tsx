@@ -17,6 +17,7 @@ import {
   ExplainerVideo,
 } from "./v3/ExplainerVideo";
 import { explainerSchema } from "./v3/schema";
+import { EngineVideo } from "./v4/EngineVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -235,6 +236,21 @@ export const RemotionRoot: React.FC = () => {
             ],
             callToAction: "Theo dõi để xem thêm",
             showSafeZone: true,
+          }}
+        />
+      </Folder>
+      <Folder name="V4-Mo-phong">
+        <Composition
+          id="SoSanhDongCo"
+          component={EngineVideo}
+          durationInFrames={1281}
+          fps={30}
+          width={1080}
+          height={1920}
+          defaultProps={{
+            showName: "TIN NHANH 1 PHÚT",
+            date: "15/11/2026",
+            audio: "media/2026-11-15-exciter-winner/giong-doc.mp3",
           }}
         />
       </Folder>
